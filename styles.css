@@ -197,6 +197,128 @@ h2 {
     color: #005694; /* 濃い大阪ブルー */
 }
 
+/* プロジェクトセクションのスタイル */
+.project-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.project-text {
+    flex: 2;
+}
+
+.project-text h3 {
+    color: #0073C2; /* 大阪ブルー */
+    margin: 1.5rem 0 1rem;
+}
+
+.project-text p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.project-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-icon {
+    width: 180px;
+    height: 180px;
+}
+
+.project-goals h3 {
+    color: #0073C2; /* 大阪ブルー */
+    margin-bottom: 1.5rem;
+}
+
+.goals-list {
+    list-style: none;
+}
+
+.goals-list li {
+    display: flex;
+    margin-bottom: 1.5rem;
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.goals-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.goal-icon {
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.goal-content {
+    flex: 1;
+}
+
+.goal-content h4 {
+    color: #0073C2; /* 大阪ブルー */
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.goal-content p {
+    line-height: 1.6;
+}
+
+/* AIええやん宣言セクションのスタイル */
+.declaration-content {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.declaration-message {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #0073C2; /* 大阪ブルー */
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.declaration-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.declaration-action {
+    margin-top: 2rem;
+}
+
+.declaration-btn {
+    background-color: #FFC706; /* 大阪城の金色 */
+    color: #333;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+}
+
+.declaration-btn:hover {
+    background-color: #FFD84D;
+    transform: scale(1.05);
+}
+
 /* お問い合わせフォームのスタイル */
 .form-group {
     margin-bottom: 1.5rem;
@@ -343,6 +465,30 @@ footer {
     
     .services-container {
         grid-template-columns: 1fr;
+    }
+    
+    .project-content {
+        flex-direction: column;
+    }
+    
+    .project-image {
+        order: -1;
+        margin-bottom: 1.5rem;
+    }
+    
+    .goals-list li {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .goal-icon {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .declaration-message {
+        font-size: 1.3rem;
     }
     
     .footer-content {
