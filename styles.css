@@ -1,4 +1,15 @@
 /* 全体のスタイル */
+:root {
+    --primary-color: #00729f; /* SMEAIのブルー */
+    --primary-dark: #00466d; /* SMEAIの濃いブルー */
+    --secondary-color: #FFC706; /* 大阪城の金色 */
+    --secondary-light: #FFD84D; /* 明るい金色 */
+    --accent-color: #FF5722; /* 大阪らしい活気のあるオレンジ色（たこ焼き等のイメージ） */
+    --text-color: #333333;
+    --bg-light: #f8f9fa;
+    --white: #ffffff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,20 +17,21 @@
 }
 
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; /* 日本語フォントを追加 */
     line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
+    color: var(--text-color);
+    background-color: var(--bg-light);
 }
 
 /* ヘッダーのスタイル */
 header {
-    background-color: #0073C2; /* 大阪ブルー */
-    color: white;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); /* SMEAIスタイルのグラデーション */
+    color: var(--white);
     padding: 1rem 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .logo-container {
@@ -45,25 +57,55 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: var(--white);
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    position: relative;
 }
 
 nav ul li a:hover {
-    color: #FFC706; /* 黄色をより大阪城の金に近い色に */
+    color: var(--secondary-color);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 50%;
+    background-color: var(--secondary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover::after {
+    width: 80%;
 }
 
 /* ヒーローセクション */
 .hero {
     position: relative;
-    height: 400px;
+    height: 500px;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 114, 159, 0.8), rgba(0, 70, 109, 0.9));
+    z-index: 2;
 }
 
 .hero-image {
@@ -76,54 +118,164 @@ nav ul li a:hover {
     z-index: 1;
 }
 
-.hero-text {
+.hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 2rem;
+}
+
+.hero-text {
     text-align: center;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--white);
     padding: 2rem;
-    border-radius: 10px;
-    max-width: 600px;
+    max-width: 700px;
+    margin-bottom: 2rem;
 }
 
 .hero-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
     border: none;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-text p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.primary-btn {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: 2px solid var(--secondary-color);
+}
+
+.primary-btn:hover {
+    background-color: var(--secondary-light);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.secondary-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero-osaka-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.osaka-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--white);
+    transition: transform 0.3s ease;
+}
+
+.osaka-icon:hover {
+    transform: translateY(-5px);
+}
+
+.osaka-icon span {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.osaka-icon p {
+    font-size: 0.9rem;
+    font-weight: bold;
 }
 
 /* メインコンテンツのスタイル */
 main {
     max-width: 1200px;
-    margin: 2rem auto;
+    margin: 3rem auto;
     padding: 0 2rem;
 }
 
 section {
-    margin-bottom: 3rem;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 4rem;
+    padding: 3rem 2rem;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
 }
 
 h2 {
-    color: #2c3e50;
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid #0073C2; /* 大阪ブルー */
-    padding-bottom: 0.5rem;
+    color: var(--primary-dark);
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.8rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '〜がんばろうで！〜'; /* 大阪弁の挿入 */
+    font-size: 0.9rem;
+    font-weight: normal;
+    color: var(--accent-color);
+    position: absolute;
+    bottom: -20px;
+    right: 0;
 }
 
 /* 協会概要セクション */
 .about-content {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 3rem;
+    position: relative;
+    overflow: hidden;
 }
 
 .about-text {
@@ -131,78 +283,159 @@ h2 {
 }
 
 .about-text p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
     font-size: 1.1rem;
+    line-height: 1.8;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.about-text p::before {
+    content: '☆'; /* 大阪らしい派手な装飾 */
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
 }
 
 .about-image {
     flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.about-image::before {
+    content: 'めっちゃええやん！';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: bold;
+    transform: rotate(10deg);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
 }
 
 .about-logo {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-logo:hover {
+    transform: scale(1.05) rotate(5deg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* サービスセクションのスタイル */
 .services-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    gap: 2.5rem;
+    margin-top: 3rem;
 }
 
 .service-card {
-    padding: 2rem;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 2.5rem 2rem;
+    background-color: var(--bg-light);
+    border-radius: 15px;
+    transition: all 0.4s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
 }
 
 .service-icon {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 1.5rem;
+    width: 90px;
+    height: 90px;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1);
 }
 
 .service-card h3 {
-    color: #0073C2; /* 大阪ブルー */
-    margin-bottom: 1rem;
+    color: var(--primary-color);
+    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+.service-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: var(--secondary-color);
 }
 
 .service-card p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.7;
 }
 
 .service-link {
-    color: #0073C2; /* 大阪ブルー */
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     margin-top: auto;
+    padding: 0.6rem 1.5rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 50px;
+    display: inline-block;
 }
 
 .service-link:hover {
-    color: #005694; /* 濃い大阪ブルー */
+    color: var(--white);
+    background-color: var(--primary-color);
 }
 
 /* プロジェクトセクションのスタイル */
 .project-content {
     display: flex;
     align-items: center;
-    gap: 2rem;
-    margin-bottom: 2rem;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    position: relative;
 }
 
 .project-text {
@@ -210,14 +443,43 @@ h2 {
 }
 
 .project-text h3 {
-    color: #0073C2; /* 大阪ブルー */
-    margin: 1.5rem 0 1rem;
+    color: var(--primary-color);
+    margin: 2rem 0 1.2rem;
+    font-size: 1.6rem;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.project-text h3::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .project-text p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
     font-size: 1.1rem;
-    line-height: 1.7;
+    line-height: 1.8;
+}
+
+.project-text p strong {
+    color: var(--accent-color);
+    position: relative;
+}
+
+.project-text p strong::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+    opacity: 0.5;
 }
 
 .project-image {
@@ -225,41 +487,102 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.project-image::after {
+    content: '大阪発！';
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: bold;
+    transform: rotate(15deg);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .project-icon {
     width: 180px;
     height: 180px;
+    border-radius: 20px;
+    background-color: var(--bg-light);
+    padding: 2rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 .project-goals h3 {
-    color: #0073C2; /* 大阪ブルー */
-    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    text-align: center;
+    position: relative;
+}
+
+.project-goals h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
 }
 
 .goals-list {
     list-style: none;
+    margin-top: 2rem;
 }
 
 .goals-list li {
     display: flex;
-    margin-bottom: 1.5rem;
-    background-color: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 2rem;
+    background-color: var(--bg-light);
+    padding: 2rem;
+    border-radius: 15px;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.goals-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 5px;
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.4s ease;
 }
 
 .goals-list li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.goals-list li:hover::before {
+    transform: scaleY(1);
 }
 
 .goal-icon {
-    font-size: 2.5rem;
-    margin-right: 1.5rem;
+    font-size: 2.8rem;
+    margin-right: 2rem;
     display: flex;
     align-items: center;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.goals-list li:hover .goal-icon {
+    transform: scale(1.2);
 }
 
 .goal-content {
@@ -267,106 +590,235 @@ h2 {
 }
 
 .goal-content h4 {
-    color: #0073C2; /* 大阪ブルー */
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
 }
 
 .goal-content p {
-    line-height: 1.6;
+    line-height: 1.7;
+    font-size: 1.05rem;
 }
 
 /* AIええやん宣言セクションのスタイル */
 .declaration-content {
     text-align: center;
-    padding: 2rem;
-    background-color: #f8f9fa;
-    border-radius: 8px;
+    padding: 3rem 2rem;
+    background-color: var(--bg-light);
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.declaration-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 114, 159, 0.05), rgba(255, 199, 6, 0.05));
+    z-index: 0;
+}
+
+.declaration-logo {
+    margin-bottom: 2.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.declaration-logo-img {
+    max-width: 220px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+}
+
+.declaration-logo-img:hover {
+    transform: scale(1.05) rotate(5deg);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .declaration-message {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: bold;
-    color: #0073C2; /* 大阪ブルー */
-    margin-bottom: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2.5rem;
     line-height: 1.6;
+    position: relative;
+    z-index: 1;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.declaration-message::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.declaration-text {
+    position: relative;
+    z-index: 1;
 }
 
 .declaration-text p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.8rem;
     font-size: 1.1rem;
-    line-height: 1.7;
+    line-height: 1.8;
+}
+
+.declaration-text p strong {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    background-color: rgba(255, 199, 6, 0.15);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
 }
 
 .declaration-action {
-    margin-top: 2rem;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 1;
 }
 
 .declaration-btn {
-    background-color: #FFC706; /* 大阪城の金色 */
-    color: #333;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     border: none;
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
+    padding: 1.2rem 3rem;
+    font-size: 1.3rem;
     border-radius: 50px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: all 0.4s ease;
     font-weight: bold;
+    box-shadow: 0 5px 15px rgba(255, 199, 6, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.declaration-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
 }
 
 .declaration-btn:hover {
-    background-color: #FFD84D;
-    transform: scale(1.05);
+    background-color: var(--secondary-light);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(255, 199, 6, 0.4);
+}
+
+.declaration-btn:hover::before {
+    left: 100%;
 }
 
 /* お問い合わせフォームのスタイル */
 .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
 }
 
 label {
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
     font-weight: bold;
+    color: var(--primary-dark);
+    transition: all 0.3s ease;
 }
 
 input, textarea {
     width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 1rem;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
     font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: var(--white);
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 114, 159, 0.2);
+}
+
+input:focus + label, textarea:focus + label {
+    color: var(--primary-color);
 }
 
 button {
-    background-color: #0073C2; /* 大阪ブルー */
-    color: white;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--white);
     border: none;
-    padding: 0.8rem 2rem;
-    font-size: 1rem;
-    border-radius: 4px;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
 }
 
 button:hover {
-    background-color: #005694; /* 濃い大阪ブルー */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+button:hover::before {
+    left: 100%;
 }
 
 /* フッターのスタイル */
 footer {
-    background-color: #003A61; /* より深い大阪ブルー */
-    color: white;
+    background: linear-gradient(135deg, var(--primary-dark), #001e32);
+    color: var(--white);
     padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
 }
 
 .footer-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 3rem 2rem;
+    padding: 4rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
 }
 
 .footer-logo {
@@ -374,20 +826,52 @@ footer {
     min-width: 200px;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
 }
 
 .footer-logo-img {
-    height: 120px;
+    height: 140px;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.footer-logo-img:hover {
+    transform: translateY(-5px) rotate(5deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 .footer-info {
     flex: 1;
     min-width: 300px;
     margin: 1rem 0;
+    padding: 0 1.5rem;
 }
 
 .footer-info p {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 1.5rem;
+    line-height: 1.6;
+}
+
+.footer-info p::before {
+    content: '📍';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.footer-info p:nth-child(2)::before {
+    content: '📞';
+}
+
+.footer-info p:nth-child(3)::before {
+    content: '✉️';
+}
+
+.footer-info p:nth-child(4)::before {
+    content: '🚇';
 }
 
 .footer-social {
@@ -397,29 +881,73 @@ footer {
     flex-direction: column;
     align-items: flex-start;
     margin: 1rem 0;
+    padding: 0 1.5rem;
+}
+
+.footer-social::before {
+    content: 'フォローしてな！';
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
 }
 
 .social-link {
-    color: white;
+    color: var(--white);
     text-decoration: none;
-    margin-bottom: 0.5rem;
-    transition: color 0.3s ease;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.social-link::before {
+    content: '👉';
+    margin-right: 0.5rem;
+    transition: transform 0.3s ease;
 }
 
 .social-link:hover {
-    color: #FFC706; /* 大阪城の金色 */
+    color: var(--secondary-color);
+    transform: translateX(5px);
+}
+
+.social-link:hover::before {
+    transform: scale(1.2);
 }
 
 .footer-copyright {
     text-align: center;
     padding: 1.5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* レスポンシブデザイン */
+@media (max-width: 1024px) {
+    h2 {
+        font-size: 2rem;
+    }
+    
+    h2::after {
+        font-size: 0.8rem;
+        bottom: -18px;
+    }
+    
+    .service-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .declaration-message {
+        font-size: 1.6rem;
+    }
+}
+
 @media (max-width: 768px) {
     header {
-        padding: 1rem;
+        padding: 1.5rem 1rem;
     }
     
     .logo-container {
@@ -430,74 +958,224 @@ footer {
     
     .logo {
         margin-right: 0;
-        margin-bottom: 1rem;
+        margin-bottom: 1.2rem;
+        height: 70px;
     }
     
     nav ul {
         flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.05);
+        padding: 1rem;
+        border-radius: 8px;
+        width: 100%;
     }
     
     nav ul li {
-        margin: 0.5rem 0;
+        margin: 0.7rem 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    nav ul li a {
+        display: block;
+        padding: 0.8rem;
     }
     
     .hero {
-        height: 300px;
+        height: auto;
+        min-height: 500px;
+        padding: 3rem 0;
+    }
+    
+    .hero-content {
+        padding: 0 1.5rem;
     }
     
     .hero-text {
         padding: 1.5rem;
-        width: 90%;
+        margin-bottom: 2.5rem;
     }
     
     .hero-text h2 {
-        font-size: 1.8rem;
+        font-size: 2rem;
+    }
+    
+    .hero-text p {
+        font-size: 1.2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+    
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .hero-osaka-icons {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: space-around;
+    }
+    
+    main {
+        padding: 0 1.5rem;
+    }
+    
+    section {
+        padding: 2.5rem 1.5rem;
     }
     
     .about-content {
         flex-direction: column;
+        gap: 2rem;
     }
     
     .about-image {
         order: -1;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .about-text p {
+        font-size: 1rem;
     }
     
     .services-container {
         grid-template-columns: 1fr;
+        gap: 2rem;
     }
     
     .project-content {
         flex-direction: column;
+        gap: 2rem;
     }
     
     .project-image {
         order: -1;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .project-text h3 {
+        font-size: 1.4rem;
+    }
+    
+    .project-text p {
+        font-size: 1rem;
     }
     
     .goals-list li {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: 1.5rem;
     }
     
     .goal-icon {
         margin-right: 0;
-        margin-bottom: 1rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .goal-content h4 {
+        font-size: 1.2rem;
+    }
+    
+    .declaration-logo-img {
+        max-width: 180px;
     }
     
     .declaration-message {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
+    }
+    
+    .declaration-text p {
+        font-size: 1rem;
+    }
+    
+    .declaration-btn {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        width: 100%;
     }
     
     .footer-content {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: 3rem 1.5rem;
+    }
+    
+    .footer-logo-img {
+        height: 120px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .footer-info {
+        padding: 0;
+        margin: 1.5rem 0;
+    }
+    
+    .footer-info p {
+        padding-left: 0;
+    }
+    
+    .footer-info p::before {
+        position: static;
+        margin-right: 0.5rem;
     }
     
     .footer-social {
+        padding: 0;
         align-items: center;
+    }
+    
+    .social-link {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-text h2 {
+        font-size: 1.7rem;
+    }
+    
+    .hero-text p {
+        font-size: 1.1rem;
+    }
+    
+    .hero-osaka-icons {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .osaka-icon span {
+        font-size: 2rem;
+    }
+    
+    .osaka-icon p {
+        font-size: 0.8rem;
+    }
+    
+    .service-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .service-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .goal-icon {
+        font-size: 2.3rem;
+    }
+    
+    .declaration-message {
+        font-size: 1.3rem;
     }
 }
