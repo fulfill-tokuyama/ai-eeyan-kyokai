@@ -143,11 +143,18 @@ nav ul li a:hover::after {
     
     .logo-container {
         margin-bottom: 0;
-        flex-wrap: wrap;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
     
     .logo {
-        display: none; /* モバイル表示時にロゴを非表示 */
+        height: 40px; /* 非表示ではなく、サイズを小さくする */
+        margin-right: 0.5rem;
+    }
+    
+    h1 {
+        font-size: 1.2rem; /* タイトルのサイズを小さくする */
     }
     
     .menu-toggle {
@@ -256,6 +263,21 @@ nav ul li a:hover::after {
 @media (max-width: 768px) {
     .hero {
         margin-top: -1px; /* ヘッダーとのギャップをなくす */
+        min-height: 450px; /* モバイル向けに高さを調整 */
+    }
+    
+    .hero-text {
+        padding: 1.2rem;
+    }
+    
+    .hero-text h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-text p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
     }
 }
 
@@ -366,17 +388,6 @@ nav ul li a:hover::after {
     font-size: 1.1rem; /* プロジェクトを見るボタンと同じ文字サイズ */
 }
 
-.line-btn-text {
-    margin-right: 0.5rem;
-    display: none; /* PCでは非表示（画像のみ表示） */
-}
-
-.line-add-friend-img {
-    width: auto;
-    height: 40px; /* プロジェクトを見るボタンと同じ高さに調整 */
-    max-width: 100%;
-    transition: all 0.3s ease;
-}
 
 .line-btn-container:hover {
     transform: translateY(-3px);
@@ -394,6 +405,9 @@ nav ul li a:hover::after {
     display: flex;
     gap: 1rem;
     justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .btn {
@@ -474,6 +488,8 @@ section {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     position: relative;
     overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 section::before {
@@ -1253,11 +1269,16 @@ footer::before {
         flex-direction: column;
         gap: 1rem;
         width: 100%;
+        align-items: center;
     }
     
-    .btn {
+    .btn, .line-btn-container {
         width: 100%;
+        max-width: 300px; /* 最大幅を設定してセンタリング */
+        margin: 0 auto;
+        display: block;
         text-align: center;
+        box-sizing: border-box;
     }
     
     .hero-osaka-icons {
@@ -1356,6 +1377,9 @@ footer::before {
         padding: 1rem 2rem;
         font-size: 1.1rem;
         width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        display: block;
     }
     
     .footer-content {
@@ -1387,16 +1411,35 @@ footer::before {
 }
 
 @media (max-width: 480px) {
+    body {
+        font-size: 0.95rem; /* ベースフォントサイズを少し小さく */
+    }
+    
     h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    section {
+        margin-bottom: 2rem;
+        padding: 1.5rem 1rem;
+    }
+    
+    .hero {
+        min-height: 400px;
     }
     
     .hero-text h2 {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
     }
     
     .hero-text p {
-        font-size: 1.1rem;
+        font-size: 1rem;
+    }
+    
+    .line-btn-container {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.2rem;
     }
     
     .hero-osaka-icons {
