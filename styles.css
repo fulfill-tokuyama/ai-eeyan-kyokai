@@ -474,17 +474,11 @@ h2::after {
 
 .about-image {
     position: relative;
-    padding-top: 40px; /* 上部に十分なスペースを確保 */
+    text-align: center;
 }
 
-.about-image::before {
-    content: 'めっちゃええやん！';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: fit-content;
+.about-bubble {
+    display: inline-block;
     background-color: var(--secondary-color);
     color: var(--text-color);
     padding: 0.5rem 1rem;
@@ -492,8 +486,9 @@ h2::after {
     font-weight: bold;
     transform: rotate(5deg);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 10; /* 最前面に表示 */
-    white-space: nowrap; /* 折り返しを防止 */
+    margin-bottom: 15px;
+    z-index: 10;
+    position: relative;
 }
 
 .about-logo {
@@ -668,17 +663,11 @@ h2::after {
 
 .project-image {
     position: relative;
-    padding-top: 40px; /* 上部に十分なスペースを確保 */
+    text-align: center;
 }
 
-.project-image::after {
-    content: '大阪発！';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: fit-content;
+.project-bubble {
+    display: inline-block;
     background-color: var(--accent-color);
     color: var(--white);
     padding: 0.5rem 1rem;
@@ -686,8 +675,9 @@ h2::after {
     font-weight: bold;
     transform: rotate(5deg);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 10; /* 最前面に表示 */
-    white-space: nowrap; /* 折り返しを防止 */
+    margin-bottom: 15px;
+    z-index: 10;
+    position: relative;
 }
 
 .project-icon {
