@@ -1,10 +1,11 @@
 /* 全体のスタイル */
 :root {
-    --primary-color: #1c3c4c; /* 紺青色 - 参考サイトを元に変更 */
-    --primary-dark: #0a2030; /* 濃い紺青色 */
-    --primary-gradient: linear-gradient(135deg, #1c3c4c, #0a2030);
-    --secondary-color: #FFC706; /* 大阪城の金色 */
-    --secondary-light: #FFD84D; /* 明るい金色 */
+    --primary-color: #0068B7; /* 水都大阪を象徴する青色（サブメインカラー） */
+    --primary-dark: #004C8C; /* 濃い青色 */
+    --primary-gradient: linear-gradient(135deg, #0068B7, #004C8C);
+    --secondary-color: #FFD700; /* 輝く日の出をイメージした大阪の金色（メインカラー） */
+    --secondary-light: #FFDF4D; /* 明るい金色 */
+    --secondary-gradient: linear-gradient(135deg, #FFD700, #FFC000);
     --accent-color: #FF5722; /* 大阪らしい活気のあるオレンジ色（たこ焼き等のイメージ） */
     --text-color: #333333;
     --bg-light: #f8f9fa;
@@ -30,17 +31,17 @@ body.no-scroll {
 
 /* ヘッダーのスタイル */
 header {
-    background: var(--primary-gradient);
-    color: var(--white);
+    background: var(--secondary-gradient);
+    color: var(--text-color);
     padding: 1rem 2rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     position: relative;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .logo-container {
@@ -55,13 +56,14 @@ header {
 }
 
 .site-title {
-    color: var(--white);
+    color: var(--text-color);
     text-decoration: none;
     transition: color 0.3s ease;
+    font-weight: bold;
 }
 
 .site-title:hover {
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .menu-toggle {
@@ -92,7 +94,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: var(--white);
+    color: var(--text-color);
     text-decoration: none;
     font-weight: bold;
     transition: all 0.3s ease;
@@ -104,8 +106,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: var(--secondary-color);
-    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--primary-color);
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 nav ul li a::after {
@@ -115,7 +117,7 @@ nav ul li a::after {
     height: 3px;
     bottom: -5px;
     left: 50%;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     transition: all 0.3s ease;
     transform: translateX(-50%);
 }
@@ -159,6 +161,7 @@ nav ul li a:hover::after {
         overflow-y: auto;
         z-index: 1000;
         padding-top: 70px;
+        color: var(--white);
     }
     
     nav.show {
@@ -180,6 +183,12 @@ nav ul li a:hover::after {
         padding: 1rem 2rem;
         width: 100%;
         border-radius: 0;
+        color: var(--white);
+    }
+    
+    nav ul li a:hover {
+        color: var(--secondary-color);
+        background-color: rgba(255, 255, 255, 0.1);
     }
     
     nav ul li a::after {
@@ -908,7 +917,7 @@ button {
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: bold;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 104, 183, 0.2);
     position: relative;
     overflow: hidden;
 }
@@ -950,7 +959,7 @@ footer::before {
     left: 0;
     width: 100%;
     height: 5px;
-    background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+    background: var(--secondary-gradient);
 }
 
 .footer-content {
