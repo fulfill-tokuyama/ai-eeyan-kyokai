@@ -1218,16 +1218,13 @@ footer::before {
     
     .line-btn-container {
         width: 100%;
-        padding: 0.6rem 1rem;
+        padding: 0.8rem 1.5rem;
         justify-content: center;
         margin-bottom: 0.5rem;
         box-sizing: border-box;
         font-size: 1rem; /* モバイルでの文字サイズ調整 */
-    }
-    
-    .line-add-friend-img {
-        width: auto;
-        height: 36px; /* モバイルでもプロジェクトを見るボタンと同じ高さに調整 */
+        background-color: #06C755; /* スマホでもLINEの緑色に */
+        color: var(--white); /* スマホでも文字色を白に */
     }
     
     .hero-buttons {
