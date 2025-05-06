@@ -944,12 +944,12 @@ button:hover::before {
 
 /* フッターのスタイル */
 footer {
-    background: var(--primary-gradient);
-    color: var(--white);
+    background: var(--white);
+    color: var(--text-color);
     padding: 0;
     position: relative;
     overflow: hidden;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 footer::before {
@@ -1040,11 +1040,11 @@ footer::before {
     font-weight: bold;
     font-size: 1.1rem;
     margin-bottom: 1rem;
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .social-link {
-    color: var(--white);
+    color: var(--primary-color);
     text-decoration: none;
     margin-bottom: 1rem;
     transition: all 0.3s ease;
@@ -1060,7 +1060,7 @@ footer::before {
 }
 
 .social-link:hover {
-    color: var(--secondary-color);
+    color: var(--accent-color);
     transform: translateX(5px);
 }
 
@@ -1071,9 +1071,10 @@ footer::before {
 .footer-copyright {
     text-align: center;
     padding: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     font-size: 0.9rem;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.03);
+    color: var(--text-color);
 }
 
 /* レスポンシブデザイン */
