@@ -137,7 +137,7 @@ nav ul li a:hover::after {
     }
     
     .logo {
-        height: 50px;
+        display: none; /* モバイル表示時にロゴを非表示 */
     }
     
     .menu-toggle {
@@ -218,6 +218,12 @@ nav ul li a:hover::after {
     height: 100%;
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3));
     z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        margin-top: -1px; /* ヘッダーとのギャップをなくす */
+    }
 }
 
 .hero-image {
