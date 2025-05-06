@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="max-age=31536000, public">
+    <meta name="description" content="AIええやん協会ブログ - AIの最新情報や協会の活動などを発信しています">
+    <!-- ファビコン設定 -->
+    <link rel="icon" href="ファビコン.png" type="image/png">
+    <link rel="shortcut icon" href="ファビコン.png" type="image/png">
+    <!-- iOS/Android ホーム画面用のアイコン設定 -->
+    <link rel="apple-touch-icon" href="ファビコン.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="ファビコン.png">
+    <meta name="apple-mobile-web-app-title" content="AIええやん協会">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Android用設定 -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#0068B7"> <!-- 大阪の青色を使用 -->
+    <meta name="msapplication-TileColor" content="transparent"> <!-- Microsoft Tile の背景色を透明に -->
+    <title>ブログ - AIええやん協会</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="favicon_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <style>
+        .page-container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .blog-main {
+            flex: 3;
+            min-width: 300px;
+        }
+        
+        .blog-sidebar {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .page-title {
+            color: var(--primary-color);
+            margin-bottom: 2.5rem;
+            position: relative;
+            display: inline-block;
+            font-size: 2rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .blog-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2.5rem;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .blog-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 5px;
+            width: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+        }
+        
+        .blog-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        
+        .blog-content {
+            padding: 1.5rem 2rem 2rem;
+        }
+        
+        .blog-date {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .blog-title {
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .blog-excerpt {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .blog-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 50px;
+        }
+        
+        .blog-link:hover {
+            color: var(--white);
+            background-color: var(--primary-color);
+        }
+        
+        .blog-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-category {
+            background-color: var(--bg-light);
+            color: var(--primary-color);
+            font-size: 0.8rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .blog-category:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        /* サイドバースタイル */
+        .sidebar-section {
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            position: relative;
+        }
+        
+        .sidebar-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 5px;
+            width: 100%;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            border-radius: 12px 12px 0 0;
+        }
+        
+        .sidebar-title {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-list, .recent-posts {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .category-list li, .recent-posts li {
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .category-list li:last-child, .recent-posts li:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .category-list a, .recent-posts a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+            position: relative;
+            padding-left: 1.5rem;
+            line-height: 1.5;
+        }
+        
+        .category-list a::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-size: 0.7rem;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+        }
+        
+        .recent-posts a::before {
+            content: '📄';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+        }
+        
+        .category-list a:hover, .recent-posts a:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+        
+        .category-list a:hover::before, .recent-posts a:hover::before {
+            color: var(--primary-color);
+        }
+        
+        .recent-post-date {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            margin-top: 0.3rem;
+        }
+        
+        /* ページネーション */
+        .blog-pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 3rem;
+            gap: 0.5rem;
+        }
+        
+        .pagination-link {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--white);
+            color: var(--text-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            border: 2px solid transparent;
+        }
+        
+        .pagination-link:hover, .pagination-link.active {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .pagination-link.prev, .pagination-link.next {
+            width: auto;
+            padding: 0 1rem;
+            border-radius: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .page-container {
+                flex-direction: column;
+                padding: 0 1.5rem;
+            }
+            
+            .blog-main {
+                order: 2;
+            }
+            
+            .blog-sidebar {
+                order: 1;
+            }
+            
+            .page-title {
+                font-size: 1.8rem;
+            }
+            
+            .blog-image {
+                height: 180px;
+            }
+            
+            .blog-title {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <header>
+        <div class="logo-container">
+            <img src="images/ai_eeyan_declaration_logo.png" alt="AIええやん協会ロゴ" class="logo" loading="lazy">
+            <h1><a href="index.html" class="site-title">AIええやん協会</a></h1>
+        </div>
+        <button class="menu-toggle" aria-label="メニュー">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="index.html#about">協会概要</a></li>
+                <li><a href="index.html#services">事業内容</a></li>
+                <li><a href="index.html#project">プロジェクト</a></li>
+                <li><a href="index.html#declaration">AIええやん宣言</a></li>
+                <li><a href="blog.html">ブログ</a></li>
+                <li><a href="index.html#contact">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-container">
+            <div class="blog-main">
+                <h2 class="page-title">AIええやんブログ</h2>
+                
+                <!-- ブログ記事1 -->
+                <article class="blog-card">
+                    <img src="images/blog-ai-education.jpg" alt="AI教育の未来" class="blog-image" loading="lazy">
+                    <div class="blog-content">
+                        <span class="blog-date">2025年4月15日</span>
+                        <div class="blog-categories">
+                            <span class="blog-category">AI教育</span>
+                            <span class="blog-category">活動報告</span>
+                        </div>
+                        <h3 class="blog-title">AI教育の未来：子どもたちに必要なスキルとは</h3>
+                        <p class="blog-excerpt">急速に発展するAI技術の中で、次世代を担う子どもたちにどのようなスキルが必要とされるのか。大阪市内の小学校で実施した「AIええやん教室」の活動報告と共に、AI時代の教育について考察します。</p>
+                        <a href="blog-post1.html" class="blog-link">続きを読む →</a>
+                    </div>
+                </article>
+                
+                <!-- ブログ記事2 -->
+                <article class="blog-card">
+                    <img src="images/blog-ai-ethics.jpg" alt="AI倫理の重要性" class="blog-image" loading="lazy">
+                    <div class="blog-content">
+                        <span class="blog-date">2025年4月8日</span>
+                        <div class="blog-categories">
+                            <span class="blog-category">AI倫理</span>
+                            <span class="blog-category">ガイドライン</span>
+                        </div>
+                        <h3 class="blog-title">中小企業におけるAI倫理：実践的なアプローチ</h3>
+                        <p class="blog-excerpt">大企業だけでなく、中小企業においてもAI倫理の考慮は不可欠です。リソースが限られる中での実践的なAI倫理アプローチについて、具体的な事例と共に解説します。大阪の企業の取り組み事例も紹介。</p>
+                        <a href="blog-post2.html" class="blog-link">続きを読む →</a>
+                    </div>
+                </article>
+                
+                <!-- ブログ記事3 -->
+                <article class="blog-card">
+                    <img src="images/blog-ai-event.jpg" alt="AIええやんフェスティバル2025" class="blog-image" loading="lazy">
+                    <div class="blog-content">
+                        <span class="blog-date">2025年3月25日</span>
+                        <div class="blog-categories">
+                            <span class="blog-category">イベント</span>
+                            <span class="blog-category">活動報告</span>
+                        </div>
+                        <h3 class="blog-title">「AIええやんフェスティバル2025」開催レポート</h3>
+                        <p class="blog-excerpt">3月20日に大阪・中之島で開催された「AIええやんフェスティバル2025」の模様をお届けします。500名を超える参加者が集まり、AI技術の最新動向や活用事例について熱い議論が交わされました。</p>
+                        <a href="blog-post3.html" class="blog-link">続きを読む →</a>
+                    </div>
+                </article>
+                
+                <!-- ページネーション -->
+                <div class="blog-pagination">
+                    <a href="#" class="pagination-link prev">← 前へ</a>
+                    <a href="#" class="pagination-link active">1</a>
+                    <a href="#" class="pagination-link">2</a>
+                    <a href="#" class="pagination-link">3</a>
+                    <a href="#" class="pagination-link next">次へ →</a>
+                </div>
+            </div>
+            
+            <!-- サイドバー -->
+            <div class="blog-sidebar">
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">カテゴリー</h3>
+                    <ul class="category-list">
+                        <li><a href="#">AI教育</a></li>
+                        <li><a href="#">AI倫理</a></li>
+                        <li><a href="#">イベント情報</a></li>
+                        <li><a href="#">活動報告</a></li>
+                        <li><a href="#">AI技術最新動向</a></li>
+                        <li><a href="#">大阪とAI</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">最近の投稿</h3>
+                    <ul class="recent-posts">
+                        <li>
+                            <a href="blog-post1.html">AI教育の未来：子どもたちに必要なスキルとは
+                                <span class="recent-post-date">2025年4月15日</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="blog-post2.html">中小企業におけるAI倫理：実践的なアプローチ
+                                <span class="recent-post-date">2025年4月8日</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="blog-post3.html">「AIええやんフェスティバル2025」開催レポート
+                                <span class="recent-post-date">2025年3月25日</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">生成AIの最新トレンド：2025年春版
+                                <span class="recent-post-date">2025年3月12日</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">アーカイブ</h3>
+                    <ul class="category-list">
+                        <li><a href="#">2025年4月</a></li>
+                        <li><a href="#">2025年3月</a></li>
+                        <li><a href="#">2025年2月</a></li>
+                        <li><a href="#">2025年1月</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/ai_eeyan_declaration_logo.png" alt="AIええやん協会ロゴ" class="footer-logo-img" loading="lazy">
+            </div>
+        </div>
+        <div class="footer-links">
+            <ul>
+                <li><a href="about.html">当協会について</a></li>
+                <li><a href="rules.html">会員規則</a></li>
+                <li><a href="privacy.html">個人情報保護方針</a></li>
+            </ul>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2025 AIええやん協会. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script defer>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('nav');
+            const overlay = document.querySelector('.overlay');
+            const navLinks = document.querySelectorAll('nav ul li a');
+            
+            // メニュー開閉機能
+            menuToggle.addEventListener('click', function() {
+                nav.classList.toggle('show');
+                overlay.classList.toggle('show');
+                document.body.classList.toggle('no-scroll');
+            });
+            
+            // オーバーレイクリックでメニューを閉じる
+            overlay.addEventListener('click', function() {
+                nav.classList.remove('show');
+                overlay.classList.remove('show');
+                document.body.classList.remove('no-scroll');
+            });
+            
+            // ナビゲーションリンククリックでメニューを閉じる
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    nav.classList.remove('show');
+                    overlay.classList.remove('show');
+                    document.body.classList.remove('no-scroll');
+                });
+            });
+            
+            // リサイズ時に表示を調整
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    nav.classList.remove('show');
+                    overlay.classList.remove('show');
+                    document.body.classList.remove('no-scroll');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
