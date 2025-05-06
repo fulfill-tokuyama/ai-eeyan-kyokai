@@ -343,44 +343,29 @@ nav ul li a:hover::after {
     z-index: 0;
 }
 
-.line-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
-
-.line-title i {
-    font-size: 1.4rem;
-    margin-right: 0.5rem;
-    vertical-align: middle;
-}
-
-.line-subtitle {
-    font-size: 1rem;
+.line-small-text {
+    font-size: 0.9rem;
     margin-bottom: 1rem;
     opacity: 0.9;
 }
 
-.line-btn {
+.line-btn-container {
     display: inline-block;
-    background-color: white;
-    color: #06C755;
-    padding: 0.7rem 1.5rem;
-    border-radius: 50px;
-    font-weight: bold;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-.line-btn:hover {
+.line-btn-container:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
 }
 
-.line-btn i {
-    margin-left: 0.5rem;
-    font-size: 0.9rem;
+.line-add-friend-img {
+    width: 200px;
+    height: auto;
+    max-width: 100%;
+    transition: all 0.3s ease;
+    border-radius: 50px; /* Match the radius of the プロジェクトを見る button */
 }
 
 .hero-buttons {
@@ -1214,18 +1199,13 @@ footer::before {
         margin-bottom: 1.2rem;
     }
     
-    .line-title {
-        font-size: 1.1rem;
+    .line-small-text {
+        font-size: 0.85rem;
     }
     
-    .line-subtitle {
-        font-size: 0.9rem;
-    }
-    
-    .line-btn {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
-        width: 100%; /* モバイルではボタンを幅いっぱいに */
+    .line-add-friend-img {
+        width: 180px; /* Slightly smaller on mobile */
+        height: auto;
     }
     
     .hero-buttons {
