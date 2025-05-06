@@ -366,6 +366,18 @@ nav ul li a:hover::after {
     font-size: 1.1rem; /* プロジェクトを見るボタンと同じ文字サイズ */
 }
 
+.line-btn-text {
+    margin-right: 0.5rem;
+    display: none; /* PCでは非表示（画像のみ表示） */
+}
+
+.line-add-friend-img {
+    width: auto;
+    height: 40px; /* プロジェクトを見るボタンと同じ高さに調整 */
+    max-width: 100%;
+    transition: all 0.3s ease;
+}
+
 .line-btn-container:hover {
     transform: translateY(-3px);
     filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
@@ -1225,6 +1237,16 @@ footer::before {
         font-size: 1rem; /* モバイルでの文字サイズ調整 */
         background-color: #06C755; /* スマホでもLINEの緑色に */
         color: var(--white); /* スマホでも文字色を白に */
+    }
+    
+    .line-btn-text {
+        display: inline; /* モバイルでは文字を表示 */
+    }
+    
+    .line-add-friend-img {
+        width: auto;
+        height: 36px; /* モバイルでもプロジェクトを見るボタンと同じ高さに調整 */
+        margin-left: 0.5rem;
     }
     
     .hero-buttons {
