@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="max-age=31536000, public">
+    <meta name="description" content="AIええやん協会の概要 - 人とAIが共に歩む社会の実現を目指して、大阪から発信します">
+    <!-- ファビコン設定 -->
+    <link rel="icon" href="ファビコン.png" type="image/png">
+    <link rel="shortcut icon" href="ファビコン.png" type="image/png">
+    <!-- iOS/Android ホーム画面用のアイコン設定 -->
+    <link rel="apple-touch-icon" href="ファビコン.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="ファビコン.png">
+    <meta name="apple-mobile-web-app-title" content="AIええやん協会">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Android用設定 -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#0068B7"> <!-- 大阪の青色を使用 -->
+    <meta name="msapplication-TileColor" content="transparent"> <!-- Microsoft Tile の背景色を透明に -->
+    <title>当協会について - AIええやん協会</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="favicon_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <style>
+        .page-container {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 3rem 2rem;
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .page-title {
+            color: var(--primary-color);
+            margin-bottom: 2.5rem;
+            position: relative;
+            display: inline-block;
+            font-size: 2rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .section {
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-content {
+            line-height: 1.8;
+        }
+        
+        .section-content p {
+            margin-bottom: 1.2rem;
+        }
+        
+        .history-list {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+        
+        .history-item {
+            display: flex;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .history-item::before {
+            content: '📅';
+            position: absolute;
+            left: 0;
+        }
+        
+        .history-year {
+            font-weight: bold;
+            margin-right: 1.5rem;
+            min-width: 70px;
+            color: var(--primary-color);
+        }
+        
+        .vision-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .vision-card {
+            background-color: var(--bg-light);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .vision-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .vision-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            position: relative;
+            padding-left: 1.8rem;
+        }
+        
+        .vision-card h4::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .page-container {
+                padding: 2rem 1.5rem;
+                margin: 2rem 1rem;
+            }
+            
+            .page-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
+            
+            .history-item {
+                flex-direction: column;
+            }
+            
+            .history-year {
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <header>
+        <div class="logo-container">
+            <img src="images/ai_eeyan_declaration_logo.png" alt="AIええやん協会ロゴ" class="logo" loading="lazy">
+            <h1><a href="index.html" class="site-title">AIええやん協会</a></h1>
+        </div>
+        <button class="menu-toggle" aria-label="メニュー">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="index.html#about">協会概要</a></li>
+                <li><a href="index.html#services">事業内容</a></li>
+                <li><a href="index.html#project">プロジェクト</a></li>
+                <li><a href="index.html#declaration">AIええやん宣言</a></li>
+                <li><a href="index.html#contact">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-container">
+            <h2 class="page-title">当協会について</h2>
+            
+            <div class="section">
+                <h3 class="section-title">設立趣旨</h3>
+                <div class="section-content">
+                    <p>AIええやん協会は、急速に発展する人工知能技術の普及と健全な活用を促進するため、2024年に大阪の地から設立されました。私たちは、AIが今後の日本社会において直面する少子高齢化や労働力減少といった課題を解決する重要な鍵になると確信しています。</p>
+                    <p>大阪らしい「やってみよか」の精神で、最新のAI技術を身近に感じ、誰もが「めっちゃええやん！便利やん！」と思えるような活用方法を広め、AIリテラシーの向上に取り組んでいます。AIは仕事を奪うものではなく、むしろ私たちの可能性を広げる「師匠」であり「相棒」として捉え、その可能性を最大限に引き出すことが当協会の使命です。</p>
+                    <p>特に、「人とAIが共に歩む社会」を実現するため、技術的な知見だけでなく、倫理的・社会的側面も含めた総合的なアプローチで活動を展開しています。大阪の豊かな文化と風土に根ざしながら、日本全国、そして世界へとAIの可能性を発信していきます。</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">沿革</h3>
+                <div class="section-content">
+                    <ul class="history-list">
+                        <li class="history-item">
+                            <div class="history-year">2024年4月</div>
+                            <div class="history-description">AIええやん協会設立準備会発足</div>
+                        </li>
+                        <li class="history-item">
+                            <div class="history-year">2024年6月</div>
+                            <div class="history-description">AIええやん協会正式設立、設立記念シンポジウム開催</div>
+                        </li>
+                        <li class="history-item">
+                            <div class="history-year">2024年8月</div>
+                            <div class="history-description">「AIええやん宣言」発表、会員募集開始</div>
+                        </li>
+                        <li class="history-item">
+                            <div class="history-year">2024年10月</div>
+                            <div class="history-description">第1回AIええやんハッカソン in 大阪開催</div>
+                        </li>
+                        <li class="history-item">
+                            <div class="history-year">2025年1月</div>
+                            <div class="history-description">中小企業向けAI活用支援プログラム開始</div>
+                        </li>
+                        <li class="history-item">
+                            <div class="history-year">2025年3月</div>
+                            <div class="history-description">「AIででっせ！大阪AI活用事例集」発行</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">理念とビジョン</h3>
+                <div class="section-content">
+                    <p>AIええやん協会は、「人とAIが共に歩む豊かな社会の実現」というビジョンのもと、下記の3つの理念を掲げて活動しています。私たちは特に大阪の地から発信することで、日本固有の文化や社会課題に即したAI活用の形を探求しています。</p>
+                    
+                    <div class="vision-grid">
+                        <div class="vision-card">
+                            <h4>AIリテラシーの向上</h4>
+                            <p>誰もがAIを理解し、適切に活用できる社会を目指します。技術的な専門知識がなくても、AIの可能性と限界を知り、日常生活や仕事に取り入れられるよう、教育・啓発活動を推進します。</p>
+                        </div>
+                        
+                        <div class="vision-card">
+                            <h4>AIの倫理的活用</h4>
+                            <p>AIの発展と人間の尊厳が両立する社会を目指します。AIの活用において倫理的な側面を重視し、公平性・透明性・説明責任を持った技術開発と利用を促進します。</p>
+                        </div>
+                        
+                        <div class="vision-card">
+                            <h4>地域に根ざしたAI活用</h4>
+                            <p>大阪・関西の地域特性や文化に根ざしたAI活用モデルを創出します。地元企業や自治体と連携し、地域課題の解決に貢献するとともに、大阪らしい親しみやすいアプローチでAIの可能性を広げます。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">組織体制</h3>
+                <div class="section-content">
+                    <p>AIええやん協会は、多様なバックグラウンドを持つ専門家によって構成されています。AI技術の研究者や開発者だけでなく、経営者、教育者、行政関係者、市民代表など、幅広い視点を取り入れることで、バランスの取れた活動を展開しています。</p>
+                    <p>理事会を中心に、各専門委員会（技術委員会、倫理委員会、教育普及委員会、産業連携委員会）を設置し、それぞれの分野で具体的な活動を推進しています。また、会員制度を設け、個人会員、法人会員、学生会員など様々な形での参加を可能にしています。</p>
+                    <p>特に大阪の企業や教育機関との連携を重視し、地域に根ざした活動を展開しながら、全国的なネットワークの構築も進めています。</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/ai_eeyan_declaration_logo.png" alt="AIええやん協会ロゴ" class="footer-logo-img" loading="lazy">
+            </div>
+        </div>
+        <div class="footer-links">
+            <ul>
+                <li><a href="about.html">当協会について</a></li>
+                <li><a href="rules.html">会員規則</a></li>
+                <li><a href="privacy.html">個人情報保護方針</a></li>
+            </ul>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2025 AIええやん協会. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script defer>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('nav');
+            const overlay = document.querySelector('.overlay');
+            const navLinks = document.querySelectorAll('nav ul li a');
+            
+            // メニュー開閉機能
+            menuToggle.addEventListener('click', function() {
+                nav.classList.toggle('show');
+                overlay.classList.toggle('show');
+                document.body.classList.toggle('no-scroll');
+            });
+            
+            // オーバーレイクリックでメニューを閉じる
+            overlay.addEventListener('click', function() {
+                nav.classList.remove('show');
+                overlay.classList.remove('show');
+                document.body.classList.remove('no-scroll');
+            });
+            
+            // ナビゲーションリンククリックでメニューを閉じる
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    nav.classList.remove('show');
+                    overlay.classList.remove('show');
+                    document.body.classList.remove('no-scroll');
+                });
+            });
+            
+            // リサイズ時に表示を調整
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    nav.classList.remove('show');
+                    overlay.classList.remove('show');
+                    document.body.classList.remove('no-scroll');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

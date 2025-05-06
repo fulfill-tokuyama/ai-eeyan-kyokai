@@ -1024,6 +1024,41 @@ footer::before {
 
 
 
+.footer-links {
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer-links ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.footer-links ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .footer-links ul {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+}
+
 .footer-copyright {
     text-align: center;
     padding: 1.5rem;
