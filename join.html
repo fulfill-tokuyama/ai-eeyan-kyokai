@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>入会申込み - AIええやん協会</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .join-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .join-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .join-title {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .join-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .join-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .join-description {
+            background-color: var(--bg-light);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            position: relative;
+            border-left: 5px solid var(--accent-color);
+        }
+        
+        .join-description p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+        
+        .join-description strong {
+            color: var(--accent-color);
+        }
+        
+        .join-benefits {
+            margin-bottom: 3rem;
+        }
+        
+        .benefits-list {
+            list-style: none;
+        }
+        
+        .benefits-list li {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        
+        .benefits-list li::before {
+            content: '🎁';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .join-form {
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-title {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 1.5rem;
+            position: relative;
+        }
+        
+        .form-title::after {
+            content: 'すぐに入力やで！';
+            font-size: 0.9rem;
+            font-weight: normal;
+            color: var(--accent-color);
+            position: absolute;
+            bottom: -20px;
+            right: 0;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 114, 159, 0.2);
+        }
+        
+        .form-submit {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            color: var(--text-color);
+            border: none;
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(255, 199, 6, 0.3);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 199, 6, 0.4);
+        }
+        
+        .privacy-note {
+            font-size: 0.9rem;
+            text-align: center;
+            margin-top: 2rem;
+            color: #777;
+        }
+        
+        @media (max-width: 768px) {
+            .join-title {
+                font-size: 2rem;
+            }
+            
+            .join-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .join-form {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/ai_eeyan_declaration_logo.png" alt="AIええやん協会ロゴ" class="logo">
+            <h1>AIええやん協会</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html#about">協会概要</a></li>
+                <li><a href="index.html#services">事業内容</a></li>
+                <li><a href="index.html#project">プロジェクト</a></li>
+                <li><a href="index.html#declaration">AIええやん宣言</a></li>
+                <li><a href="index.html#contact">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="join-container">
+            <div class="join-header">
+                <h2 class="join-title">AIええやん協会への入会申込み</h2>
+                <p class="join-subtitle">AIの可能性を広げ、未来を共に創りましょう！</p>
+            </div>
+            
+            <div class="join-description">
+                <p><strong>AIええやん宣言に賛同</strong>いただき、ありがとうございます！私たちはAIの力で大阪から日本を、そして世界を変えていく活動を推進しています。</p>
+                <p>AIええやん協会の会員になると、AIに関する最新情報や勉強会、ワークショップなどさまざまな特典が受けられます。少子高齢化が進む日本で、AIの活用は未来への重要な鍵です。一緒に「AIええやん！便利やん！」の精神で未来を創っていきましょう！</p>
+            </div>
+            
+            <div class="join-benefits">
+                <h3>会員特典</h3>
+                <ul class="benefits-list">
+                    <li>AI技術に関する最新情報の定期配信</li>
+                    <li>会員限定セミナーやワークショップへの参加権</li>
+                    <li>AI専門家とのネットワーキングの機会</li>
+                    <li>協会主催イベントの優先参加・割引</li>
+                    <li>AIに関する相談窓口の利用</li>
+                    <li>会員限定のAI活用事例や資料へのアクセス</li>
+                </ul>
+            </div>
+            
+            <div class="join-form">
+                <h3 class="form-title">入会申込みフォーム</h3>
+                <form action="https://formspree.io/f/mnnddbwp" method="POST">
+                    <div class="form-group">
+                        <label for="name">お名前 <span style="color: red;">*</span></label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="furigana">ふりがな <span style="color: red;">*</span></label>
+                        <input type="text" id="furigana" name="furigana" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">メールアドレス <span style="color: red;">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">電話番号 <span style="color: red;">*</span></label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">会社名・所属団体</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="position">役職</label>
+                        <input type="text" id="position" name="position">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">住所 <span style="color: red;">*</span></label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="membership_type">会員種別 <span style="color: red;">*</span></label>
+                        <select id="membership_type" name="membership_type" required>
+                            <option value="">選択してください</option>
+                            <option value="individual">個人会員</option>
+                            <option value="corporate">法人会員</option>
+                            <option value="student">学生会員</option>
+                            <option value="supporting">賛助会員</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="ai_experience">AIの経験レベル</label>
+                        <select id="ai_experience" name="ai_experience">
+                            <option value="">選択してください</option>
+                            <option value="beginner">初心者（これから学びたい）</option>
+                            <option value="intermediate">中級者（基本は理解している）</option>
+                            <option value="advanced">上級者（実務で活用している）</option>
+                            <option value="expert">専門家（AI開発や研究に携わっている）</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="interest">AIに関する興味・関心分野（複数選択可）</label>
+                        <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.5rem;">
+                            <label style="font-weight: normal; display: flex; align-items: center;">
+                                <input type="checkbox" name="interest[]" value="general"> AI基礎知識
+                            </label>
+                            <label style="font-weight: normal; display: flex; align-items: center;">
+                                <input type="checkbox" name="interest[]" value="business"> ビジネス活用
+                            </label>
+                            <label style="font-weight: normal; display: flex; align-items: center;">
+                                <input type="checkbox" name="interest[]" value="development"> AI開発
+                            </label>
+                            <label style="font-weight: normal; display: flex; align-items: center;">
+                                <input type="checkbox" name="interest[]" value="ethics"> AI倫理
+                            </label>
+                            <label style="font-weight: normal; display: flex; align-items: center;">
+                                <input type="checkbox" name="interest[]" value="education"> 教育活用
+                            </label>
+                            <label style="font-weight: normal; display: flex; align-items: center;">
+                                <input type="checkbox" name="interest[]" value="research"> 研究
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">協会に期待すること・メッセージ</label>
+                        <textarea id="message" name="message" rows="5"></textarea>
+                    </div>
+                    
+                    <input type="hidden" name="_subject" value="AIええやん協会 入会申込み">
+                    <input type="hidden" name="_next" value="https://fulfill-tokuyama.github.io/ai-eeyan-kyokai/thanks.html">
+                    
+                    <div class="form-submit">
+                        <button type="submit" class="submit-btn">入会を申し込む</button>
+                    </div>
+                    
+                    <p class="privacy-note">※ご入力いただいた個人情報は、AIええやん協会の活動に関する連絡以外の目的では使用いたしません。</p>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/ai_eeyan_declaration_logo.png" alt="AIええやん協会ロゴ" class="footer-logo-img">
+            </div>
+            <div class="footer-info">
+                <p>〒531-0075 大阪府大阪市北区大淀南１丁目５−１ ケイヒン梅田ビル2階</p>
+                <p>TEL: 06-6136-7221</p>
+                <p>Email: t.tokuyama@fulfill-net.com</p>
+                <p>最寄駅：JR大阪駅から徒歩5分</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">YouTube</a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2025 AIええやん協会. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
