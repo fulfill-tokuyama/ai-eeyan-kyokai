@@ -426,15 +426,6 @@ h2 {
     display: inline-block;
 }
 
-h2::after {
-    content: '〜がんばろうで！〜'; /* 大阪弁の挿入 */
-    font-size: 0.9rem;
-    font-weight: normal;
-    color: var(--accent-color);
-    position: absolute;
-    bottom: -20px;
-    right: 0;
-}
 
 /* 協会概要セクション */
 .about-content {
@@ -1074,10 +1065,6 @@ footer::before {
         font-size: 2rem;
     }
     
-    h2::after {
-        font-size: 0.8rem;
-        bottom: -18px;
-    }
     
     .service-card {
         padding: 2rem 1.5rem;
