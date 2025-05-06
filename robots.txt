@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fulfill-tokuyama.github.io/ai-eeyan-kyokai/sitemap.xml
