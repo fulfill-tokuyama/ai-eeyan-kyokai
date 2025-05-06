@@ -1,6 +1,6 @@
-/* ファビコンの背景を白色に設定するためのCSS */
+/* ファビコンの背景を透明に設定するためのCSS */
 .favicon-img {
-    background-color: #FFFFFF;
+    background-color: transparent;
     border-radius: 50%;
     display: inline-block;
 }
