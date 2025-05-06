@@ -351,7 +351,9 @@ nav ul li a:hover::after {
 }
 
 .line-btn-container {
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     padding: 0.8rem 1.5rem;
     border-radius: 50px;
     font-weight: bold;
@@ -1204,10 +1206,21 @@ footer::before {
     .line-announce {
         padding: 1rem;
         margin-bottom: 1.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
     .line-small-text {
         font-size: 0.95rem;
+    }
+    
+    .line-btn-container {
+        width: 100%;
+        padding: 0.6rem 1rem;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+        box-sizing: border-box;
     }
     
     .line-add-friend-img {
