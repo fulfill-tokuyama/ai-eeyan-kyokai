@@ -995,7 +995,7 @@ footer::before {
 .footer-content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     padding: 4rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -1003,8 +1003,8 @@ footer::before {
 }
 
 .footer-logo {
-    flex: 1;
-    min-width: 200px;
+    flex: 0 0 auto;
+    margin-right: 3rem;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -1023,7 +1023,7 @@ footer::before {
 }
 
 .footer-info {
-    flex: 1;
+    flex: 0 0 auto;
     min-width: 300px;
     margin: 1rem 0;
     padding: 0 1.5rem;
@@ -1055,48 +1055,6 @@ footer::before {
     content: '🚇';
 }
 
-.footer-social {
-    flex: 1;
-    min-width: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 1rem 0;
-    padding: 0 1.5rem;
-}
-
-.footer-social::before {
-    content: 'フォローしてな！';
-    font-weight: bold;
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-}
-
-.social-link {
-    color: var(--primary-color);
-    text-decoration: none;
-    margin-bottom: 1rem;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    font-weight: 500;
-}
-
-.social-link::before {
-    content: '👉';
-    margin-right: 0.5rem;
-    transition: transform 0.3s ease;
-}
-
-.social-link:hover {
-    color: var(--accent-color);
-    transform: translateX(5px);
-}
-
-.social-link:hover::before {
-    transform: scale(1.2);
-}
 
 .footer-copyright {
     text-align: center;
@@ -1332,14 +1290,6 @@ footer::before {
         margin-right: 0.5rem;
     }
     
-    .footer-social {
-        padding: 0;
-        align-items: center;
-    }
-    
-    .social-link {
-        justify-content: center;
-    }
 }
 
 @media (max-width: 480px) {
