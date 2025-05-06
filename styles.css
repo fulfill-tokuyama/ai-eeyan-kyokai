@@ -31,7 +31,7 @@ body.no-scroll {
 
 /* ヘッダーのスタイル */
 header {
-    background: var(--secondary-gradient);
+    background: var(--white);
     color: var(--text-color);
     padding: 1rem 2rem;
     display: flex;
@@ -155,13 +155,13 @@ nav ul li a:hover::after {
         width: 80%;
         max-width: 300px;
         height: 100%;
-        background: var(--primary-gradient);
+        background: var(--white);
         transition: all 0.3s ease-in-out;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
         overflow-y: auto;
         z-index: 1000;
         padding-top: 70px;
-        color: var(--white);
+        color: var(--text-color);
     }
     
     nav.show {
@@ -176,19 +176,19 @@ nav ul li a:hover::after {
     nav ul li {
         margin: 0;
         width: 100%;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
     
     nav ul li a {
         padding: 1rem 2rem;
         width: 100%;
         border-radius: 0;
-        color: var(--white);
+        color: var(--text-color);
     }
     
     nav ul li a:hover {
-        color: var(--secondary-color);
-        background-color: rgba(255, 255, 255, 0.1);
+        color: var(--primary-color);
+        background-color: rgba(0, 0, 0, 0.05);
     }
     
     nav ul li a::after {
