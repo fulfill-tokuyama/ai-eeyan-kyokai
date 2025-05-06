@@ -1,7 +1,8 @@
 /* 全体のスタイル */
 :root {
-    --primary-color: #00729f; /* SMEAIのブルー */
-    --primary-dark: #00466d; /* SMEAIの濃いブルー */
+    --primary-color: #1c3c4c; /* 紺青色 - 参考サイトを元に変更 */
+    --primary-dark: #0a2030; /* 濃い紺青色 */
+    --primary-gradient: linear-gradient(135deg, #1c3c4c, #0a2030);
     --secondary-color: #FFC706; /* 大阪城の金色 */
     --secondary-light: #FFD84D; /* 明るい金色 */
     --accent-color: #FF5722; /* 大阪らしい活気のあるオレンジ色（たこ焼き等のイメージ） */
@@ -29,7 +30,7 @@ body.no-scroll {
 
 /* ヘッダーのスタイル */
 header {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); /* SMEAIスタイルのグラデーション */
+    background: var(--primary-gradient);
     color: var(--white);
     padding: 1rem 2rem;
     display: flex;
@@ -37,8 +38,9 @@ header {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .logo-container {
@@ -151,7 +153,7 @@ nav ul li a:hover::after {
         width: 80%;
         max-width: 300px;
         height: 100%;
-        background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+        background: var(--primary-gradient);
         transition: all 0.3s ease-in-out;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
         overflow-y: auto;
@@ -897,7 +899,7 @@ input:focus + label, textarea:focus + label {
 }
 
 button {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    background: var(--primary-gradient);
     color: var(--white);
     border: none;
     padding: 1rem 2.5rem;
@@ -933,11 +935,12 @@ button:hover::before {
 
 /* フッターのスタイル */
 footer {
-    background: linear-gradient(135deg, var(--primary-dark), #001e32);
+    background: var(--primary-gradient);
     color: var(--white);
     padding: 0;
     position: relative;
     overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 footer::before {
