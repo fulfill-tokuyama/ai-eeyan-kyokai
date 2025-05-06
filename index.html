@@ -152,7 +152,7 @@
 
         <section id="contact">
             <h2>お問い合わせやで～</h2>
-            <form>
+            <form action="https://formspree.io/f/xqkvppek" method="POST">
                 <div class="form-group">
                     <label for="name">お名前：</label>
                     <input type="text" id="name" name="name" required>
@@ -165,6 +165,8 @@
                     <label for="message">メッセージ：</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
+                <input type="hidden" name="_subject" value="AIええやん協会 お問い合わせ">
+                <input type="hidden" name="_next" value="https://fulfill-tokuyama.github.io/ai-eeyan-kyokai/thanks.html">
                 <button type="submit">送信</button>
             </form>
         </section>
