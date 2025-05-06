@@ -477,18 +477,19 @@ h2::after {
     text-align: center;
 }
 
-.about-bubble {
-    display: inline-block;
+.about-image::before {
+    content: 'めっちゃええやん！';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%) rotate(5deg);
     background-color: var(--secondary-color);
     color: var(--text-color);
     padding: 0.5rem 1rem;
     border-radius: 50px;
     font-weight: bold;
-    transform: rotate(5deg);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 15px;
     z-index: 10;
-    position: relative;
 }
 
 .about-logo {
@@ -666,18 +667,19 @@ h2::after {
     text-align: center;
 }
 
-.project-bubble {
-    display: inline-block;
+.project-image::after {
+    content: '大阪発！';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%) rotate(5deg);
     background-color: var(--accent-color);
     color: var(--white);
     padding: 0.5rem 1rem;
     border-radius: 50px;
     font-weight: bold;
-    transform: rotate(5deg);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 15px;
     z-index: 10;
-    position: relative;
 }
 
 .project-icon {
@@ -1123,6 +1125,17 @@ footer::before {
     .declaration-message {
         font-size: 1.6rem;
     }
+    
+    /* Tablet adjustments for decorative elements */
+    .about-image::before {
+        top: -28px;
+        font-size: 1rem;
+    }
+    
+    .project-image::after {
+        top: -28px;
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1236,6 +1249,19 @@ footer::before {
     .project-image {
         order: -1;
         margin-bottom: 1rem;
+    }
+    
+    /* Mobile adjustments for decorative elements */
+    .about-image::before {
+        top: -25px;
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .project-image::after {
+        top: -25px;
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
     }
     
     .project-text h3 {
@@ -1357,5 +1383,20 @@ footer::before {
     
     .declaration-message {
         font-size: 1.3rem;
+    }
+    
+    /* Responsive styles for decorative elements */
+    .about-image::before {
+        top: -25px;
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+        width: auto;
+    }
+    
+    .project-image::after {
+        top: -25px;
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+        width: auto;
     }
 }
