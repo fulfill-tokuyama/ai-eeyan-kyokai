@@ -68,13 +68,19 @@ header {
 
 .menu-toggle {
     display: none;
-    background: none;
-    border: none;
-    color: var(--white);
+    background: rgba(0, 104, 183, 0.1);
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    color: var(--primary-color);
     font-size: 1.5rem;
     cursor: pointer;
     padding: 0.5rem;
     z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+    background: rgba(0, 104, 183, 0.2);
 }
 
 nav {
@@ -162,6 +168,7 @@ nav ul li a:hover::after {
         z-index: 1000;
         padding-top: 70px;
         color: var(--text-color);
+        border-left: 3px solid var(--primary-color);
     }
     
     nav.show {
@@ -180,15 +187,30 @@ nav ul li a:hover::after {
     }
     
     nav ul li a {
-        padding: 1rem 2rem;
+        padding: 1.2rem 2rem;
         width: 100%;
         border-radius: 0;
-        color: var(--text-color);
+        color: var(--primary-dark);
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+    }
+    
+    nav ul li a::before {
+        content: '▶';
+        color: var(--primary-color);
+        margin-right: 1rem;
+        font-size: 0.8rem;
     }
     
     nav ul li a:hover {
         color: var(--primary-color);
-        background-color: rgba(0, 0, 0, 0.05);
+        background-color: rgba(0, 104, 183, 0.1);
+        transform: translateX(5px);
+    }
+    
+    nav ul li a:hover::before {
+        transform: scale(1.2);
     }
     
     nav ul li a::after {
