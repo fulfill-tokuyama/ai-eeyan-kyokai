@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="max-age=31536000, public">
+    <meta name="description" content="生成AIの仕組みをわかりやすく解説。ディープラーニングやトランスフォーマーモデルなどの複雑な概念を初心者向けに簡単に説明します。生成AIがどのように学習し、テキストや画像を生成するのかが5分で理解できます。">
+    <meta name="keywords" content="生成AI, 仕組み, 基礎知識, ディープラーニング, トランスフォーマー, LLM, 大規模言語モデル, 初心者向け, AIの基礎">
+    <meta name="author" content="佐藤 智子 - AIええやん協会">
+    <meta property="og:title" content="５分でわかる生成AIのしくみ | AIええやん協会">
+    <meta property="og:description" content="複雑な生成AIの仕組みを初心者にもわかりやすく解説。ディープラーニングやトランスフォーマーなどの難しい概念も、身近な例えを使って簡単に理解できます。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://fulfill-tokuyama.github.io/ai-eeyan-kyokai/blog-post2.html">
+    <meta property="og:image" content="https://fulfill-tokuyama.github.io/ai-eeyan-kyokai/images/blog-gen-ai-mechanism.jpg">
+    <meta property="og:site_name" content="AIええやん協会">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="article:published_time" content="2025-05-05T09:00:00+09:00">
+    <meta property="article:modified_time" content="2025-05-05T09:00:00+09:00">
+    <meta property="article:author" content="佐藤 智子">
+    <meta property="article:section" content="生成AI">
+    <meta property="article:tag" content="生成AI">
+    <meta property="article:tag" content="AI基礎知識">
+    <meta property="article:tag" content="ディープラーニング">
+    <meta property="article:tag" content="トランスフォーマー">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="５分でわかる生成AIのしくみ | AIええやん協会">
+    <meta name="twitter:description" content="複雑な生成AIの仕組みを初心者にもわかりやすく解説。ディープラーニングやトランスフォーマーなどの難しい概念も、身近な例えを使って簡単に理解できます。">
+    <meta name="twitter:image" content="https://fulfill-tokuyama.github.io/ai-eeyan-kyokai/images/blog-gen-ai-mechanism.jpg">
+    <link rel="canonical" href="https://fulfill-tokuyama.github.io/ai-eeyan-kyokai/blog-post2.html">
+    <!-- ファビコン設定 -->
+    <link rel="icon" href="ファビコン.png" type="image/png">
+    <link rel="shortcut icon" href="ファビコン.png" type="image/png">
+    <!-- iOS/Android ホーム画面用のアイコン設定 -->
+    <link rel="apple-touch-icon" href="ファビコン.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="ファビコン.png">
+    <meta name="apple-mobile-web-app-title" content="AIええやん協会">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Android用設定 -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#0068B7"> <!-- 大阪の青色を使用 -->
+    <meta name="msapplication-TileColor" content="transparent"> <!-- Microsoft Tile の背景色を透明に -->
+    <title>５分でわかる生成AIのしくみ | 初心者向けAI解説 | AIええやん協会</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="favicon_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "５分でわかる生成AIのしくみ",
+      "description": "生成AIの仕組みをわかりやすく解説。ディープラーニングやトランスフォーマーモデルなどの複雑な概念を初心者向けに簡単に説明します。生成AIがどのように学習し、テキストや画像を生成するのかが5分で理解できます。",
+      "image": "https://fulfill-tokuyama.github.io/ai-eeyan-kyokai/images/blog-gen-ai-mechanism.jpg",
+      "datePublished": "2025-05-05T09:00:00+09:00",
+      "dateModified": "2025-05-05T09:00:00+09:00",
+      "author": {
+        "@type": "Person",
+        "name": "佐藤 智子",
+        "jobTitle": "AIええやん協会教育担当",
+        "description": "元大学教授。AIやディープラーニングの複雑な概念をわかりやすく説明することを得意としている。初心者向けAI講座の講師として人気があり、「誰でもわかるAI入門」シリーズの著者。"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "AIええやん協会",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://fulfill-tokuyama.github.io/ai-eeyan-kyokai/images/ai_eeyan_declaration_logo.png"
+        }
+      },
+      "keywords": ["生成AI", "仕組み", "基礎知識", "ディープラーニング", "トランスフォーマー", "LLM", "大規模言語モデル", "初心者向け", "AIの基礎"],
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://fulfill-tokuyama.github.io/ai-eeyan-kyokai/blog-post2.html"
+      }
+    }
+    </script>
+    <style>
+        .breadcrumbs {
+            background-color: #f9f9f9;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumbs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .breadcrumbs ol {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .breadcrumbs li {
+            display: flex;
+            align-items: center;
+        }
+        
+        .breadcrumbs li:not(:last-child)::after {
+            content: '›';
+            margin: 0 0.5rem;
+            color: #888;
+        }
+        
+        .breadcrumbs a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+        
+        .breadcrumbs li:last-child {
+            color: #666;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .breadcrumbs {
+                padding: 0.8rem 0;
+                font-size: 0.8rem;
+            }
+            
+            .breadcrumbs-container {
+                padding: 0 1.5rem;
+            }
+        }
+        
+        .page-container {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 3rem;
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .page-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 5px;
+            width: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+            border-radius: 12px 12px 0 0;
+        }
+        
+        .post-header {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .post-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        
+        .post-date {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .post-date i {
+            margin-right: 0.5rem;
+        }
+        
+        .post-categories {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .post-category {
+            background-color: var(--bg-light);
+            color: var(--primary-color);
+            font-size: 0.8rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .post-category:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .post-title {
+            color: var(--primary-dark);
+            font-size: 2.2rem;
+            line-height: 1.3;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+        
+        .post-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .post-content {
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .post-content h2 {
+            color: var(--primary-color);
+            margin: 2.5rem 0 1.5rem;
+            font-size: 1.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+        }
+        
+        .post-content h3 {
+            color: var(--primary-dark);
+            margin: 2rem 0 1.2rem;
+            font-size: 1.5rem;
+        }
+        
+        .post-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .post-content strong {
+            color: var(--accent-color);
+            position: relative;
+        }
+        
+        .post-content strong::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent-color);
+            opacity: 0.5;
+        }
+        
+        .post-content ul, .post-content ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+        
+        .post-content li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .post-content a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border-bottom: 1px dashed var(--primary-color);
+        }
+        
+        .post-content a:hover {
+            color: var(--accent-color);
+            border-bottom-style: solid;
+        }
+        
+        .post-content blockquote {
+            margin: 2rem 0;
+            padding: 1.5rem 2rem;
+            background-color: var(--bg-light);
+            border-left: 5px solid var(--primary-color);
+            font-style: italic;
+            position: relative;
+        }
+        
+        .post-content blockquote::before {
+            content: '"';
+            position: absolute;
+            top: 0;
+            left: 10px;
+            font-size: 3rem;
+            color: var(--primary-color);
+            opacity: 0.2;
+            line-height: 1;
+        }
+        
+        .post-content blockquote p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .post-navigation {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .post-navigation a {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .post-navigation a:hover {
+            color: var(--accent-color);
+        }
+        
+        .post-navigation .prev-post i {
+            margin-right: 0.8rem;
+        }
+        
+        .post-navigation .next-post i {
+            margin-left: 0.8rem;
+        }
+        
+        .author-box {
+            margin-top: 4rem;
+            padding: 2rem;
+            background-color: var(--bg-light);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            position: relative;
+        }
+        
+        .author-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 5px;
+            background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+            border-radius: 10px 0 0 10px;
+        }
+        
+        .author-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .author-info {
+            flex: 1;
+        }
+        
+        .author-name {
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .author-bio {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .related-posts {
+            margin-top: 4rem;
+        }
+        
+        .related-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .related-item {
+            background-color: var(--bg-light);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .related-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .related-image {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+        
+        .related-content {
+            padding: 1.2rem;
+        }
+        
+        .related-date {
+            color: var(--accent-color);
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .related-item-title {
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+        
+        .related-item-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .related-item-link:hover {
+            color: var(--accent-color);
+        }
+        
+        /* AI解説用のスタイル */
+        .concept-box {
+            background-color: rgba(255, 215, 0, 0.05);
+            border: 2px dashed var(--secondary-color);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            position: relative;
+        }
+        
+        .concept-box::before {
+            content: '💡';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background-color: var(--white);
+            padding: 0 10px;
+            font-size: 1.5rem;
+        }
+        
+        .concept-title {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .example-box {
+            background-color: rgba(255, 87, 34, 0.05);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+        
+        .example-box::before {
+            content: '例えば...';
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background-color: var(--white);
+            padding: 0 10px;
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .page-container {
+                padding: 2rem 1.5rem;
+                margin: 2rem 1rem;
+            }
+            
+            .post-title {
+                font-size: 1.8rem;
+            }
+            
+            .post-content {
+                font-size: 1rem;
+            }
+            
+            .post-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            .post-content h3 {
+                font-size: 1.3rem;
+            }
+            
+            .author-box {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+            
+            .author-box::before {
+                width: 100%;
+                height: 5px;
+                top: 0;
+                left: 0;
+                border-radius: 10px 10px 0 0;
+            }
+            
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <header>
+        <div class="logo-container">
+            <img src="images/ai_eeyan_declaration_logo.png" alt="AIええやん協会ロゴ" class="logo" loading="lazy">
+            <h1><a href="index.html" class="site-title">AIええやん協会</a></h1>
+        </div>
+        <button class="menu-toggle" aria-label="メニュー">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="index.html#about">協会概要</a></li>
+                <li><a href="index.html#services">事業内容</a></li>
+                <li><a href="index.html#project">プロジェクト</a></li>
+                <li><a href="index.html#declaration">AIええやん宣言</a></li>
+                <li><a href="blog.html">ブログ</a></li>
+                <li><a href="index.html#contact">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="breadcrumbs">
+            <div class="breadcrumbs-container">
+                <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a itemprop="item" href="index.html"><span itemprop="name">ホーム</span></a>
+                        <meta itemprop="position" content="1" />
+                    </li>
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a itemprop="item" href="blog.html"><span itemprop="name">ブログ</span></a>
+                        <meta itemprop="position" content="2" />
+                    </li>
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <span itemprop="name">５分でわかる生成AIのしくみ</span>
+                        <meta itemprop="position" content="3" />
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="page-container">
+            <article class="post">
+                <header class="post-header">
+                    <div class="post-meta">
+                        <span class="post-date"><i class="fas fa-calendar-alt"></i> <time datetime="2025-05-05">2025年5月5日</time></span>
+                        <div class="post-categories">
+                            <span class="post-category">生成AI</span>
+                            <span class="post-category">基礎知識</span>
+                        </div>
+                    </div>
+                    <h1 class="post-title">５分でわかる生成AIのしくみ</h1>
+                </header>
+                
+                <img src="images/blog-gen-ai-mechanism.jpg" alt="生成AIの仕組みの概念図" class="post-image" loading="lazy">
+                
+                <div class="post-content">
+                    <p>「生成AI」という言葉はよく聞くけれど、実際にどのような仕組みで動いているのか知っていますか？ChatGPTやMidjourneyなどの生成AIは、一見魔法のように見えますが、実はある原理に基づいて動作しています。この記事では、専門知識がなくても理解できるよう、生成AIの仕組みを簡単に解説します。</p>
+                    
+                    <h2>生成AIとは何か？</h2>
+                    
+                    <p>生成AI（Generative AI）とは、新しいコンテンツを「生成する」AIのことです。テキスト、画像、音声、動画など、さまざまな形式のコンテンツを作り出すことができます。</p>
+                    
+                    <p>これまでのAIは主に「分類」や「認識」が得意でした（例：これは猫の写真か犬の写真か判断する）。一方、生成AIは「創造」が得意です（例：猫の写真を作り出す）。</p>
+                    
+                    <div class="concept-box">
+                        <h3 class="concept-title">生成AIの主な種類</h3>
+                        <ul>
+                            <li><strong>テキスト生成AI</strong>：ChatGPT, Claude, Google Bard など</li>
+                            <li><strong>画像生成AI</strong>：DALL-E, Midjourney, Stable Diffusion など</li>
+                            <li><strong>音声生成AI</strong>：ElevenLabs, Suno, Murf など</li>
+                            <li><strong>動画生成AI</strong>：Runway, Luma など</li>
+                        </ul>
+                    </div>
+                    
+                    <p>それでは、これらの生成AIがどのような仕組みで動いているのか見ていきましょう。</p>
+                    
+                    <h2>生成AIの基本原理</h2>
+                    
+                    <p>生成AIの基本的な仕組みは、大まかに言うと以下の3ステップで成り立っています。</p>
+                    
+                    <h3>1. 大量のデータから学習する</h3>
+                    
+                    <p>生成AIの第一歩は「学習」です。ChatGPTのような大規模言語モデル（LLM）は、インターネット上の膨大な量のテキスト（本、記事、ウェブページなど）から言語の法則やパターンを学習します。</p>
+                    
+                    <div class="example-box">
+                        <p>例えば、人間の子どもが言葉を学ぶときのことを考えてみましょう。子どもは周りの大人の会話を聞いたり、絵本を読んでもらったりすることで言葉を学んでいきます。生成AIも同じように、大量のテキストデータから言葉の使い方や知識を学んでいくのです。</p>
+                        <p>ただし、人間の子どもが数年かけて学ぶのに対し、AIは数週間から数ヶ月で膨大な量のデータを処理します。ChatGPTが学習したデータ量は、約100万冊以上の本に相当すると言われています。</p>
+                    </div>
+                    
+                    <h3>2. パターンを見つけ出す</h3>
+                    
+                    <p>生成AIは、学習データの中からパターンを見つけ出します。例えば、どの単語がどの単語と一緒に使われやすいか、どんな文脈でどんな表現が用いられるかなどの法則性を抽出します。これを「統計的言語モデル」と呼びます。</p>
+                    
+                    <div class="concept-box">
+                        <h3 class="concept-title">ニューラルネットワークとは？</h3>
+                        <p>生成AIの学習には「ニューラルネットワーク」という技術が使われています。これは人間の脳の構造を模倣した数学モデルで、たくさんの「ニューロン（神経細胞）」が相互に接続された構造を持ちます。</p>
+                        <p>各ニューロンは入力を受け取り、計算を行って出力を次のニューロンに渡します。学習を進めるにつれ、どの情報を重視すべきかの「重み」が調整され、より正確な予測ができるようになります。</p>
+                    </div>
+                    
+                    <h3>3. 新しいコンテンツを生成する</h3>
+                    
+                    <p>学習とパターン認識が完了したAIは、ユーザーの入力（プロンプト）に基づいて新しいコンテンツを生成します。例えば「大阪についての短い紹介文を書いて」というプロンプトを受け取ると、AIは学習したパターンをもとに、大阪に関連する情報を組み合わせて文章を作成します。</p>
+                    
+                    <div class="example-box">
+                        <p>プロンプト：「大阪についての短い紹介文を書いて」</p>
+                        <p>AIの出力：「大阪は、たこ焼きや串カツなどの美味しい食文化で知られる日本第二の都市です。通天閣や大阪城、ユニバーサル・スタジオ・ジャパンなどの観光スポットがあり、明るく陽気な「ノリのええ」市民性が魅力。「天下の台所」と呼ばれる商業の中心地でもあり、関西の経済・文化の中心として発展しています。」</p>
+                    </div>
+                    
+                    <p>この出力は、AIが学習した「大阪」に関する情報（観光地、食べ物、文化的特徴など）と、「紹介文」の一般的な構造を組み合わせて生成されています。</p>
+                    
+                    <h2>生成AIの核心技術：トランスフォーマー</h2>
+                    
+                    <p>現在の最先端の生成AI（ChatGPTやClaudeなど）は、「トランスフォーマー」と呼ばれる技術をベースにしています。この技術が2017年に発表されてから、AIの能力は飛躍的に向上しました。</p>
+                    
+                    <div class="concept-box">
+                        <h3 class="concept-title">トランスフォーマーとは？</h3>
+                        <p>トランスフォーマーは、文章内の単語や句の「関連性」を効率的に捉える仕組みです。従来のモデルは文章を順番に処理していましたが、トランスフォーマーは文章全体を一度に見渡し、単語間の関係性を把握します。</p>
+                        <p>例えば「彼は本を読んだ。それはとても面白かった」という文章で、「それ」が「本」を指していることをトランスフォーマーは理解できます。</p>
+                    </div>
+                    
+                    <p>トランスフォーマーの重要な特徴は「自己注意機構（セルフアテンション）」です。これは文章中のどの部分に「注意」を払うべきかを判断する仕組みです。</p>
+                    
+                    <div class="example-box">
+                        <p>「銀行に行った。お金を引き出した。」という文章を考えてみましょう。第二文の「お金を引き出した」という行動を理解するには、「銀行」という情報が重要です。トランスフォーマーは、「お金を引き出した」という部分を処理する際に、「銀行」という単語に高い注意を払うことで、文脈を正しく理解します。</p>
+                    </div>
+                    
+                    <h2>生成AIの学習方法</h2>
+                    
+                    <p>生成AIの学習は主に以下のような段階を経て行われます。</p>
+                    
+                    <h3>1. 事前学習（Pre-training）</h3>
+                    
+                    <p>膨大な量のテキストデータを使って、言語の基本的な構造やパターンを学習します。これはいわば、AIにとっての「一般教養」です。</p>
+                    
+                    <div class="example-box">
+                        <p>事前学習では、例えば「大阪は＿＿にあります」という文で空欄に何が入るかを予測する練習をします。正解は「日本」ですが、AIはこのような膨大な量の「穴埋め問題」を解くことで言語を学んでいきます。</p>
+                    </div>
+                    
+                    <h3>2. 微調整（Fine-tuning）</h3>
+                    
+                    <p>事前学習が終わったAIに対して、より特定の目的に合わせた追加トレーニングを行います。例えば、より自然な会話ができるように、または特定の専門分野の知識を持つように調整します。</p>
+                    
+                    <h3>3. 強化学習（RLHF）</h3>
+                    
+                    <p>最後に「人間のフィードバックによる強化学習（RLHF: Reinforcement Learning from Human Feedback）」が行われます。AIの出力に対して人間が「良い/悪い」の評価を与え、その評価に基づいてAIの振る舞いを調整していきます。</p>
+                    
+                    <div class="concept-box">
+                        <h3 class="concept-title">なぜ強化学習が必要なのか？</h3>
+                        <p>事前学習だけでは、AIが有害な内容や間違った情報を生成してしまう可能性があります。強化学習により、「役立つ」「正確な」「安全な」応答をするようAIを訓練します。</p>
+                        <p>例えば、有害な質問には答えない、差別的な内容を生成しない、誤解を招く情報を提供しないなどのルールを学習させます。</p>
+                    </div>
+                    
+                    <h2>画像生成AIの仕組み</h2>
+                    
+                    <p>テキスト生成AIの仕組みを理解したところで、画像生成AIについても簡単に触れておきましょう。</p>
+                    
+                    <h3>ディフュージョンモデル</h3>
+                    
+                    <p>Stable DiffusionやDALL-Eなどの画像生成AIは、「ディフュージョンモデル」と呼ばれる技術を使っています。この仕組みは、「ノイズから画像を作り出す」という逆転の発想に基づいています。</p>
+                    
+                    <div class="example-box">
+                        <p>ディフュージョンモデルは、次のように動作します：</p>
+                        <ol>
+                            <li>学習段階では、元の画像にどんどんノイズ（雑音）を加えていき、最終的には完全なランダムノイズにします</li>
+                            <li>AIはこのプロセスを逆に進める方法を学習します（ノイズから元の画像を復元する）</li>
+                            <li>実際に使用する際は、ランダムノイズから始めて、少しずつノイズを取り除いていき、ユーザーの指示に沿った画像を作り出します</li>
+                        </ol>
+                    </div>
+                    
+                    <p>テキスト指示から画像を生成する場合は、テキスト理解モデル（トランスフォーマーベース）とディフュージョンモデルが組み合わされています。テキスト理解部分が指示の意味を理解し、その内容に沿った画像を生成するようディフュージョンモデルをガイドします。</p>
+                    
+                    <h2>生成AIの限界と課題</h2>
+                    
+                    <p>生成AIは非常に強力なツールですが、いくつかの重要な限界と課題があります。</p>
+                    
+                    <h3>1. ハルシネーション（幻覚）</h3>
+                    
+                    <p>生成AIは時々、実際には存在しない情報を「事実」のように提示することがあります。これをAIの「ハルシネーション（幻覚）」と呼びます。</p>
+                    
+                    <div class="example-box">
+                        <p>例えば、存在しない学術論文を引用したり、実在しない人物や出来事について詳細に語ったりすることがあります。AIは「もっともらしい」情報を生成することには長けていますが、その情報が事実かどうかを自分で検証する能力は限られています。</p>
+                    </div>
+                    
+                    <h3>2. 質問意図の誤解</h3>
+                    
+                    <p>人間のように複雑なニュアンスやコンテキストを完全に理解することはまだ難しく、質問の意図を誤解することがあります。</p>
+                    
+                    <h3>3. 訓練データの限界</h3>
+                    
+                    <p>AIは訓練データに含まれる情報や、そこに反映されている偏見も学習してしまいます。また、最新の情報は含まれていないことが多いです。</p>
+                    
+                    <div class="concept-box">
+                        <h3 class="concept-title">知識のカットオフ</h3>
+                        <p>多くの生成AIモデルは、ある時点までのデータで訓練されており、それ以降の出来事や情報は知りません。これを「知識のカットオフ」と呼びます。例えばChatGPT-4は2023年4月までの情報で訓練されており、それ以降の出来事については知識がありません。</p>
+                    </div>
+                    
+                    <h2>まとめ：5分で理解する生成AIの仕組み</h2>
+                    
+                    <p>この記事を通じて、生成AIの基本的な仕組みについて解説してきました。最後に重要なポイントをまとめましょう。</p>
+                    
+                    <ul>
+                        <li><strong>大量のデータからの学習</strong>：生成AIは膨大な量のテキストや画像からパターンを学習します</li>
+                        <li><strong>パターン認識</strong>：ニューラルネットワークを使って、言語や画像のパターンを認識します</li>
+                        <li><strong>トランスフォーマー</strong>：現代の生成AIの核心技術。単語や文の関連性を効率的に捉えることができます</li>
+                        <li><strong>学習プロセス</strong>：事前学習→微調整→強化学習という段階を経て開発されます</li>
+                        <li><strong>ディフュージョンモデル</strong>：画像生成AIの多くは、ノイズから徐々に画像を作り出すこの技術を使用しています</li>
+                        <li><strong>限界と課題</strong>：ハルシネーション、質問意図の誤解、訓練データの限界などがあります</li>
+                    </ul>
+                    
+                    <p>生成AIは今後もさらに進化していくことでしょう。これらの基本的な仕組みを理解しておくことで、AIツールをより効果的に、そして責任を持って活用することができます。</p>
+                    
+                    <p>次回は「いますぐ試せる！おもろいユースケース10選」と題して、生成AIの具体的な活用例をご紹介する予定です。ぜひお楽しみに！</p>
+                </div>
+                
+                <!-- 著者情報 -->
+                <div class="author-box">
+                    <img src="images/author-sato.jpg" alt="佐藤 智子" class="author-avatar" loading="lazy">
+                    <div class="author-info">
+                        <h3 class="author-name">佐藤 智子</h3>
+                        <p class="author-bio">AIええやん協会教育担当。元大学教授。AIやディープラーニングの複雑な概念をわかりやすく説明することを得意としている。初心者向けAI講座の講師として人気があり、「誰でもわかるAI入門」シリーズの著者。</p>
+                    </div>
+                </div>
+                
+                <!-- 記事ナビゲーション -->
+                <div class="post-navigation">
+                    <a href="blog-post1.html" class="prev-post"><i class="fas fa-arrow-left"></i> 前の記事</a>
+                    <a href="blog.html" class="back-to-blog">ブログ一覧に戻る</a>
+                    <a href="blog-post3.html" class="next-post">次の記事 <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- 関連記事 -->
+                <div class="related-posts">
+                    <h3 class="related-title">関連記事</h3>
+                    <div class="related-grid">
+                        <div class="related-item">
+                            <img src="images/blog-gen-ai-trend.jpg" alt="なんで今「生成AI」なん？数字で見る最新潮流" class="related-image" loading="lazy">
+                            <div class="related-content">
+                                <span class="related-date">2025年5月10日</span>
+                                <h4 class="related-item-title">なんで今「生成AI」なん？数字で見る最新潮流</h4>
+                                <a href="blog-post1.html" class="related-item-link">続きを読む →</a>
+                            </div>
+                        </div>
+                        <div class="related-item">
+                            <img src="images/blog-gen-ai-usecase.jpg" alt="いますぐ試せる！おもろいユースケース10選" class="related-image" loading="lazy">
+                            <div class="related-content">
+                                <span class="related-date">2025年4月28日</span>
+                                <h4 class="related-item-title">いますぐ試せる！おもろいユースケース10選</h4>
+                                <a href="blog-post3.html" class="related-item-link">続きを読む →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/ai_eeyan_declaration_logo.png" alt="AIええやん協会ロゴ" class="footer-logo-img" loading="lazy">
+            </div>
+        </div>
+        <div class="footer-links">
+            <ul>
+                <li><a href="about.html">当協会について</a></li>
+                <li><a href="rules.html">会員規則</a></li>
+                <li><a href="privacy.html">個人情報保護方針</a></li>
+            </ul>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2025 AIええやん協会. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script defer>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('nav');
+            const overlay = document.querySelector('.overlay');
+            const navLinks = document.querySelectorAll('nav ul li a');
+            
+            // メニュー開閉機能
+            menuToggle.addEventListener('click', function() {
+                nav.classList.toggle('show');
+                overlay.classList.toggle('show');
+                document.body.classList.toggle('no-scroll');
+            });
+            
+            // オーバーレイクリックでメニューを閉じる
+            overlay.addEventListener('click', function() {
+                nav.classList.remove('show');
+                overlay.classList.remove('show');
+                document.body.classList.remove('no-scroll');
+            });
+            
+            // ナビゲーションリンククリックでメニューを閉じる
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    nav.classList.remove('show');
+                    overlay.classList.remove('show');
+                    document.body.classList.remove('no-scroll');
+                });
+            });
+            
+            // リサイズ時に表示を調整
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    nav.classList.remove('show');
+                    overlay.classList.remove('show');
+                    document.body.classList.remove('no-scroll');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
