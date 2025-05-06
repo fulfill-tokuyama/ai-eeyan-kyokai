@@ -149,8 +149,7 @@ nav ul li a:hover::after {
     }
     
     .logo {
-        height: 40px; /* 非表示ではなく、サイズを小さくする */
-        margin-right: 0.5rem;
+        display: none; /* モバイル表示時にロゴを非表示に戻す */
     }
     
     h1 {
