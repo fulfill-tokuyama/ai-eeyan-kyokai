@@ -1022,38 +1022,6 @@ footer::before {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
-.footer-info {
-    flex: 0 0 auto;
-    min-width: 300px;
-    margin: 1rem 0;
-    padding: 0 1.5rem;
-}
-
-.footer-info p {
-    margin-bottom: 1rem;
-    position: relative;
-    padding-left: 1.5rem;
-    line-height: 1.6;
-}
-
-.footer-info p::before {
-    content: '📍';
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-.footer-info p:nth-child(2)::before {
-    content: '📞';
-}
-
-.footer-info p:nth-child(3)::before {
-    content: '✉️';
-}
-
-.footer-info p:nth-child(4)::before {
-    content: '🚇';
-}
 
 
 .footer-copyright {
