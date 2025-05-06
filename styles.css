@@ -360,9 +360,10 @@ nav ul li a:hover::after {
     text-decoration: none;
     transition: all 0.3s ease;
     text-align: center;
-    background-color: var(--white);
+    background-color: #06C755; /* LINEの緑色に変更 */
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    color: #06C755;
+    color: var(--white); /* 文字色を白に */
+    font-size: 1.1rem; /* プロジェクトを見るボタンと同じ文字サイズ */
 }
 
 .line-btn-container:hover {
@@ -1221,6 +1222,7 @@ footer::before {
         justify-content: center;
         margin-bottom: 0.5rem;
         box-sizing: border-box;
+        font-size: 1rem; /* モバイルでの文字サイズ調整 */
     }
     
     .line-add-friend-img {
