@@ -361,11 +361,10 @@ nav ul li a:hover::after {
 }
 
 .line-add-friend-img {
-    width: 200px;
+    width: 240px;
     height: auto;
     max-width: 100%;
     transition: all 0.3s ease;
-    border-radius: 50px; /* Match the radius of the プロジェクトを見る button */
 }
 
 .hero-buttons {
@@ -1204,7 +1203,7 @@ footer::before {
     }
     
     .line-add-friend-img {
-        width: 180px; /* Slightly smaller on mobile */
+        width: 220px; /* Slightly smaller on mobile but still visible */
         height: auto;
     }
     
