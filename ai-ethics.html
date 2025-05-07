@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="max-age=31536000, public">
+    <meta name="description" content="AIええやん協会のAI倫理ガイドライン策定 - AIの適切で倫理的な活用を推進します">
+    <!-- ファビコン設定 -->
+    <link rel="icon" href="ファビコン.png" type="image/png">
+    <link rel="shortcut icon" href="ファビコン.png" type="image/png">
+    <!-- iOS/Android ホーム画面用のアイコン設定 -->
+    <link rel="apple-touch-icon" href="ファビコン.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="ファビコン.png">
+    <meta name="apple-mobile-web-app-title" content="AIええやん協会">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Android用設定 -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#0068B7"> <!-- 大阪の青色を使用 -->
+    <meta name="msapplication-TileColor" content="transparent"> <!-- Microsoft Tile の背景色を透明に -->
+    <title>AI倫理ガイドライン - AIええやん協会</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="favicon_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <style>
+        .page-container {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 3rem 2rem;
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .page-title {
+            color: var(--primary-color);
+            margin-bottom: 2.5rem;
+            position: relative;
+            display: inline-block;
+            font-size: 2rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .section {
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-content {
+            line-height: 1.8;
+        }
+        
+        .section-content p {
+            margin-bottom: 1.2rem;
+        }
+        
+        .principle-card {
+            background-color: var(--bg-light);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+        }
+        
+        .principle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .principle-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            position: relative;
+            padding-left: 1.8rem;
+        }
+        
+        .principle-card h4::before {
+            content: '⚖️';
+            position: absolute;
+            left: 0;
+        }
+        
+        .quote-box {
+            background-color: var(--primary-color-light);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+            position: relative;
+        }
+        
+        .quote-box::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--primary-color);
+            opacity: 0.2;
+            position: absolute;
+            top: -15px;
+            left: 10px;
+        }
+        
+        .quote-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .quote-author {
+            font-weight: bold;
+            text-align: right;
+        }
+        
+        .download-box {
+            background-color: var(--bg-light);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            background-color: var(--primary-color-dark);
+            transform: translateY(-3px);
+        }
+        
+        .partner-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .partner-logo {
+            max-width: 150px;
+            height: auto;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .partner-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+        
+        .case-studies {
+            margin-top: 2rem;
+        }
+        
+        .case-study {
+            background-color: var(--bg-light);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .case-study h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary-color-light);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--white);
+            border: 4px solid var(--primary-color);
+            border-radius: 50%;
+            z-index: 1;
+            top: 15px;
+        }
+        
+        .timeline-left {
+            left: 0;
+        }
+        
+        .timeline-right {
+            left: 50%;
+        }
+        
+        .timeline-right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 15px;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .timeline-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-date {
+            color: var(--text-color-light);
+            font-style: italic;
+        }
+        
+        .cta-box {
+            background-color: var(--primary-color-light);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .cta-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-btn:hover {
+            background-color: var(--primary-color-dark);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .page-container {
+                padding: 2rem 1.5rem;
+                margin: 2rem 1rem;
+            }
+            
+            .page-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 20px;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .timeline-right {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <header>
+        <div class="logo-container">
+            <img src="images/ai_eeyan_declaration_logo.png" alt="AIええやん協会ロゴ" class="logo" loading="lazy">
+            <h1><a href="index.html" class="site-title">AIええやん協会</a></h1>
+        </div>
+        <button class="menu-toggle" aria-label="メニュー">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="index.html#about">協会概要</a></li>
+                <li><a href="index.html#services">事業内容</a></li>
+                <li><a href="index.html#project">プロジェクト</a></li>
+                <li><a href="index.html#declaration">AIええやん宣言</a></li>
+                <li><a href="blog.html">ブログ</a></li>
+                <li><a href="index.html#contact">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-container">
+            <h2 class="page-title">AI倫理ガイドライン策定やねん</h2>
+            
+            <div class="section">
+                <h3 class="section-title">大阪から発信するAI倫理の考え方</h3>
+                <div class="section-content">
+                    <p>AIええやん協会では、AI技術の急速な発展と普及に伴い、その活用における倫理的側面を重視し、日本の文化や価値観に根ざした独自のAI倫理ガイドラインを策定しています。特に「人とAIの共生」という視点を中心に、大阪らしい親しみやすさと実践的なアプローチで倫理的なAI活用を推進しています。</p>
+                    
+                    <p>私たちの倫理ガイドラインは、単なる抽象的な理念にとどまらず、中小企業や自治体、教育機関など様々な場面で実際に活用できる具体的な指針を提供します。「難しい」「堅苦しい」と思われがちな倫理の問題を、「ほんまにええやん！」と思える形で伝え、広めることが私たちのミッションです。</p>
+                    
+                    <div class="quote-box">
+                        <p class="quote-text">AIは単なるツールではなく、私たちの社会を形作る重要なパートナーです。だからこそ、人間中心の価値観を大切にしながら、その可能性を最大限に引き出す倫理的な枠組みが必要なんです。難しく考えんでもええねん、まずは「これってどうなん？」って考えることから始めましょう。</p>
+                        <p class="quote-author">- AIええやん協会 倫理委員会</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">「AIええやん」5つの倫理原則</h3>
+                <div class="section-content">
+                    <p>AIええやん協会では、AIの開発と利用において守るべき5つの基本原則を定めています。これらの原則は、国際的な倫理基準を踏まえつつ、日本の文化や社会的背景を考慮して策定されています。</p>
+                    
+                    <div class="principle-card">
+                        <h4>人間中心のAI（人間第一やで！）</h4>
+                        <p>AIは常に人間の幸福と福祉を最優先に設計・運用されるべきです。AIは人間の創造性を拡張し、労働環境を改善し、より豊かな生活を実現するために活用されるべきであり、人間の自律性や尊厳を損なうことがあってはなりません。</p>
+                    </div>
+                    
+                    <div class="principle-card">
+                        <h4>公平性と包摂性（みんな仲良くやで！）</h4>
+                        <p>AIシステムは、年齢、性別、文化的背景、能力にかかわらず、すべての人に公平に利益をもたらすように設計されるべきです。特定の集団に対する偏見や差別を助長するようなAIの開発や利用は避け、多様性を尊重する包摂的なアプローチが求められます。</p>
+                    </div>
+                    
+                    <div class="principle-card">
+                        <h4>透明性と説明責任（なんでやねん？ってわかるように！）</h4>
+                        <p>AIシステムの意思決定プロセスは、可能な限り透明であるべきです。利用者や影響を受ける人々が、AIがどのような判断をどのような根拠で行ったのかを理解できるよう、適切な説明が提供されるべきです。また、AI開発・運用者は結果に対する責任を明確にする必要があります。</p>
+                    </div>
+                    
+                    <div class="principle-card">
+                        <h4>安全性とセキュリティ（安心・安全が一番やで！）</h4>
+                        <p>AIシステムは、物理的・心理的な安全を確保し、プライバシーを尊重するように設計・運用されるべきです。個人データの保護、サイバーセキュリティリスクへの対応、誤用や悪用を防ぐための措置が重要です。特に故意または過失による悪影響を防ぐための対策が必要です。</p>
+                    </div>
+                    
+                    <div class="principle-card">
+                        <h4>社会的責任と持続可能性（未来の子どもらのために！）</h4>
+                        <p>AI開発・運用者は、その技術が社会や環境に与える影響を常に考慮し、持続可能な未来に貢献する責任があります。特に次世代への影響を考え、短期的な利益よりも長期的な社会的価値を重視するアプローチが求められます。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">実践のためのガイドライン</h3>
+                <div class="section-content">
+                    <p>AIええやん協会では、上記の原則を実践に移すための具体的なガイドラインを策定し、定期的に更新しています。これらのガイドラインは、AIの開発者、導入企業、一般ユーザーなど、様々な立場の人々がそれぞれの場面で活用できるように設計されています。</p>
+                    
+                    <div class="download-box">
+                        <h4>AIええやん倫理ガイドライン（完全版）</h4>
+                        <p>AI開発・導入・利用における倫理的配慮の詳細を解説した完全版ガイドラインを無料でダウンロードいただけます。（PDF形式、約40ページ）</p>
+                        <a href="#" class="download-btn">ガイドラインをダウンロード</a>
+                    </div>
+                    
+                    <p>ガイドラインでは、以下のような具体的なトピックについて詳しく解説しています：</p>
+                    <ul>
+                        <li>AIシステム開発時の倫理的チェックリスト</li>
+                        <li>データ収集・利用における公平性の確保</li>
+                        <li>AIの判断に対する人間の監督と介入の方法</li>
+                        <li>プライバシーとデータ保護の実践的アプローチ</li>
+                        <li>中小企業でのAI導入時の倫理的配慮</li>
+                        <li>教育現場でのAI活用における注意点</li>
+                        <li>AIと人間の適切な役割分担</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">倫理的AI活用の事例紹介</h3>
+                <div class="section-content">
+                    <p>AIええやん協会では、倫理的なAI活用の好事例を収集・分析し、広く共有しています。これらの事例は、AIの倫理的活用が単なる理念ではなく、実際のビジネスや社会課題解決において価値を生み出すことを示しています。</p>
+                    
+                    <div class="case-studies">
+                        <div class="case-study">
+                            <h4>大阪市の高齢者見守りAIシステム</h4>
+                            <p>プライバシーに配慮しながら高齢者の安全を見守るAIシステムの導入事例。住民のプライバシー権と安全確保のバランスを取りながら、倫理的な運用を実現しています。</p>
+                        </div>
+                        
+                        <div class="case-study">
+                            <h4>中小製造業のAI品質管理システム</h4>
+                            <p>熟練工の技術を尊重しながらAIによる品質管理を導入した事例。人間の経験とAIの分析力を組み合わせ、従業員の技術向上とビジネス成長を両立させています。</p>
+                        </div>
+                        
+                        <div class="case-study">
+                            <h4>インクルーシブなAI教育支援ツール</h4>
+                            <p>多様な学習スタイルや障害に配慮した教育支援AIの開発事例。すべての子どもたちが公平に学習機会を得られるよう設計された倫理的なアプローチです。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">倫理ガイドライン策定プロジェクト</h3>
+                <div class="section-content">
+                    <p>AIええやん協会の倫理ガイドラインは、産学官民の多様なステークホルダーが参加する「AIええやん倫理プロジェクト」によって策定・更新されています。このプロジェクトでは、オープンな議論とフィードバックのプロセスを通じて、より多くの視点を取り入れることを重視しています。</p>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item timeline-left">
+                            <div class="timeline-content">
+                                <h4>フェーズ1: 基本原則の策定</h4>
+                                <p class="timeline-date">2024年7月〜9月</p>
+                                <p>AI倫理に関する国内外の動向調査と、日本・関西地域の特性を考慮した基本原則の策定</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item timeline-right">
+                            <div class="timeline-content">
+                                <h4>フェーズ2: 実践ガイドラインの作成</h4>
+                                <p class="timeline-date">2024年10月〜12月</p>
+                                <p>基本原則を具体的な実践に落とし込むためのガイドライン策定と事例収集</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item timeline-left">
+                            <div class="timeline-content">
+                                <h4>フェーズ3: パブリックコメントと改訂</h4>
+                                <p class="timeline-date">2025年1月〜3月</p>
+                                <p>ドラフト版のパブリックコメント募集と多様なフィードバックを反映した改訂</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item timeline-right">
+                            <div class="timeline-content">
+                                <h4>フェーズ4: 普及と実装支援</h4>
+                                <p class="timeline-date">2025年4月〜</p>
+                                <p>完成したガイドラインの普及活動と実際の現場での実装支援</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">連携パートナー</h3>
+                <div class="section-content">
+                    <p>AIええやん協会の倫理ガイドラインは、多くの協力パートナーとの連携によって支えられています。学術機関、企業、公共団体、市民団体など様々なステークホルダーとの協働を通じて、多角的な視点からの倫理的検討を行っています。</p>
+                    
+                    <div class="partner-list">
+                        <img src="images/partner1.png" alt="パートナー企業ロゴ1" class="partner-logo" loading="lazy">
+                        <img src="images/partner2.png" alt="パートナー企業ロゴ2" class="partner-logo" loading="lazy">
+                        <img src="images/partner3.png" alt="パートナー企業ロゴ3" class="partner-logo" loading="lazy">
+                        <img src="images/partner4.png" alt="パートナー企業ロゴ4" class="partner-logo" loading="lazy">
+                        <img src="images/partner5.png" alt="パートナー企業ロゴ5" class="partner-logo" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta-box">
+                <h3 class="cta-title">AI倫理プロジェクトへの参加</h3>
+                <p>AIええやん協会では、AI倫理ガイドライン策定に参加・協力いただける方を随時募集しています。倫理専門家だけでなく、AI開発者、企業の担当者、一般ユーザーなど、多様な視点からのご意見・ご協力をお待ちしています。</p>
+                <a href="index.html#contact" class="cta-btn">お問い合わせはこちら</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/ai_eeyan_declaration_logo.png" alt="AIええやん協会ロゴ" class="footer-logo-img" loading="lazy">
+            </div>
+        </div>
+        <div class="footer-links">
+            <ul>
+                <li><a href="about.html">当協会について</a></li>
+                <li><a href="rules.html">会員規則</a></li>
+                <li><a href="privacy.html">個人情報保護方針</a></li>
+            </ul>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2025 AIええやん協会. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script defer>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('nav');
+            const overlay = document.querySelector('.overlay');
+            const navLinks = document.querySelectorAll('nav ul li a');
+            
+            // メニュー開閉機能
+            menuToggle.addEventListener('click', function() {
+                nav.classList.toggle('show');
+                overlay.classList.toggle('show');
+                document.body.classList.toggle('no-scroll');
+            });
+            
+            // オーバーレイクリックでメニューを閉じる
+            overlay.addEventListener('click', function() {
+                nav.classList.remove('show');
+                overlay.classList.remove('show');
+                document.body.classList.remove('no-scroll');
+            });
+            
+            // ナビゲーションリンククリックでメニューを閉じる
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    nav.classList.remove('show');
+                    overlay.classList.remove('show');
+                    document.body.classList.remove('no-scroll');
+                });
+            });
+            
+            // リサイズ時に表示を調整
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    nav.classList.remove('show');
+                    overlay.classList.remove('show');
+                    document.body.classList.remove('no-scroll');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

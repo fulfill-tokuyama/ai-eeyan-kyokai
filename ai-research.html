@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="max-age=31536000, public">
+    <meta name="description" content="AIええやん協会のAI研究開発活動 - 最先端のAI技術研究と開発を大阪から推進します">
+    <!-- ファビコン設定 -->
+    <link rel="icon" href="ファビコン.png" type="image/png">
+    <link rel="shortcut icon" href="ファビコン.png" type="image/png">
+    <!-- iOS/Android ホーム画面用のアイコン設定 -->
+    <link rel="apple-touch-icon" href="ファビコン.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="ファビコン.png">
+    <meta name="apple-mobile-web-app-title" content="AIええやん協会">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Android用設定 -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#0068B7"> <!-- 大阪の青色を使用 -->
+    <meta name="msapplication-TileColor" content="transparent"> <!-- Microsoft Tile の背景色を透明に -->
+    <title>AI研究開発 - AIええやん協会</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="favicon_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <style>
+        .page-container {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 3rem 2rem;
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .page-title {
+            color: var(--primary-color);
+            margin-bottom: 2.5rem;
+            position: relative;
+            display: inline-block;
+            font-size: 2rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .section {
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-content {
+            line-height: 1.8;
+        }
+        
+        .section-content p {
+            margin-bottom: 1.2rem;
+        }
+        
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .research-card {
+            background-color: var(--bg-light);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .research-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .research-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            position: relative;
+            padding-left: 1.8rem;
+        }
+        
+        .research-card h4::before {
+            content: '🔬';
+            position: absolute;
+            left: 0;
+        }
+        
+        .tech-badge {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            font-size: 0.8rem;
+            padding: 0.3rem 0.7rem;
+            border-radius: 20px;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .research-image {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            max-height: 200px;
+            object-fit: cover;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .team-member {
+            text-align: center;
+            background-color: var(--bg-light);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .team-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+        }
+        
+        .team-name {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-role {
+            font-size: 0.9rem;
+            color: var(--text-color-light);
+            margin-bottom: 1rem;
+        }
+        
+        .milestone-list {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+            position: relative;
+        }
+        
+        .milestone-list::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 18px;
+            height: 100%;
+            width: 2px;
+            background-color: var(--primary-color);
+            opacity: 0.3;
+        }
+        
+        .milestone-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 2rem;
+        }
+        
+        .milestone-item::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 5px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+        }
+        
+        .milestone-date {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .milestone-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cta-box {
+            background-color: var(--primary-color-light);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .cta-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-btn:hover {
+            background-color: var(--primary-color-dark);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .page-container {
+                padding: 2rem 1.5rem;
+                margin: 2rem 1rem;
+            }
+            
+            .page-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
+            
+            .team-grid, .research-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <header>
+        <div class="logo-container">
+            <img src="images/ai_eeyan_declaration_logo.png" alt="AIええやん協会ロゴ" class="logo" loading="lazy">
+            <h1><a href="index.html" class="site-title">AIええやん協会</a></h1>
+        </div>
+        <button class="menu-toggle" aria-label="メニュー">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="index.html#about">協会概要</a></li>
+                <li><a href="index.html#services">事業内容</a></li>
+                <li><a href="index.html#project">プロジェクト</a></li>
+                <li><a href="index.html#declaration">AIええやん宣言</a></li>
+                <li><a href="blog.html">ブログ</a></li>
+                <li><a href="index.html#contact">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-container">
+            <h2 class="page-title">AI研究開発</h2>
+            
+            <div class="section">
+                <h3 class="section-title">研究開発ビジョン</h3>
+                <div class="section-content">
+                    <p>AIええやん協会の研究開発部門では、「人とAIの共生」をテーマに、最新のAI技術の研究と実装に取り組んでいます。特に大阪・関西の地域特性や課題に根ざした研究活動を展開し、実社会での活用を見据えた実践的な開発を推進しています。</p>
+                    <p>私たちは、単なる技術開発だけでなく、AIの社会実装における倫理的・文化的側面も重視し、日本社会に最適化されたAIソリューションの創出を目指しています。研究者、エンジニア、デザイナー、倫理学者など多様な専門家が協働し、学際的なアプローチで課題解決に取り組んでいます。</p>
+                    <p>また、中小企業や地域コミュニティでも活用しやすい、親しみやすく実用的なAI技術の開発と普及にも力を入れています。「難しそう」「手が届かない」と思われがちなAI技術を、「ほんまにええやん！」と実感できる形で提供することが私たちのミッションです。</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">主要研究プロジェクト</h3>
+                <div class="section-content">
+                    <p>現在、AIええやん協会では以下の研究プロジェクトを中心に活動を展開しています。各プロジェクトでは、大学や企業との連携も積極的に行い、オープンイノベーションの推進にも努めています。</p>
+                    
+                    <div class="research-grid">
+                        <div class="research-card">
+                            <h4>大阪弁理解AIアシスタント</h4>
+                            <img src="images/research-osaka.jpg" alt="大阪弁理解AIの研究イメージ" class="research-image" loading="lazy">
+                            <p>大阪独特の方言や表現を正確に理解し、自然な対話ができるAIアシスタントの開発。地域文化や言語の多様性に対応したAIモデルの構築を目指しています。</p>
+                            <div class="tech-badges">
+                                <span class="tech-badge">自然言語処理</span>
+                                <span class="tech-badge">機械学習</span>
+                                <span class="tech-badge">方言解析</span>
+                            </div>
+                        </div>
+                        
+                        <div class="research-card">
+                            <h4>中小企業向け業務最適化AI</h4>
+                            <img src="images/research-business.jpg" alt="業務最適化AIの研究イメージ" class="research-image" loading="lazy">
+                            <p>少ないデータでも効果的に学習し、中小企業の業務効率化を実現するAIシステムの開発。コストパフォーマンスに優れ、導入障壁の低い実用的なソリューションを提供します。</p>
+                            <div class="tech-badges">
+                                <span class="tech-badge">少量データ学習</span>
+                                <span class="tech-badge">プロセスマイニング</span>
+                                <span class="tech-badge">RPA</span>
+                            </div>
+                        </div>
+                        
+                        <div class="research-card">
+                            <h4>高齢者見守りAIシステム</h4>
+                            <img src="images/research-elderly.jpg" alt="高齢者見守りAIの研究イメージ" class="research-image" loading="lazy">
+                            <p>プライバシーを尊重しながら高齢者の健康状態や生活パターンを見守るAIシステムの開発。少子高齢化が進む日本社会の課題解決に貢献します。</p>
+                            <div class="tech-badges">
+                                <span class="tech-badge">コンピュータビジョン</span>
+                                <span class="tech-badge">プライバシー保護AI</span>
+                                <span class="tech-badge">行動認識</span>
+                            </div>
+                        </div>
+                        
+                        <div class="research-card">
+                            <h4>大阪文化継承デジタルツイン</h4>
+                            <img src="images/research-culture.jpg" alt="文化継承AIの研究イメージ" class="research-image" loading="lazy">
+                            <p>大阪の伝統文化や職人技をAIとVR/AR技術で記録・継承するプロジェクト。文化的資産のデジタル保存と次世代への継承を実現します。</p>
+                            <div class="tech-badges">
+                                <span class="tech-badge">デジタルツイン</span>
+                                <span class="tech-badge">VR/AR</span>
+                                <span class="tech-badge">文化的AI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">研究開発チーム</h3>
+                <div class="section-content">
+                    <p>AIええやん協会の研究開発活動は、AI技術の専門家だけでなく、多様なバックグラウンドを持つ人材によって支えられています。産学連携を重視し、大学研究者と民間のエンジニアが協働する環境を整えています。</p>
+                    
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <img src="images/researcher1.jpg" alt="山田太郎氏のプロフィール写真" class="team-image" loading="lazy">
+                            <div class="team-name">山田 太郎</div>
+                            <div class="team-role">研究開発部門 責任者</div>
+                            <p>自然言語処理の専門家。大阪大学AI研究所との連携プロジェクトを主導。</p>
+                        </div>
+                        
+                        <div class="team-member">
+                            <img src="images/researcher2.jpg" alt="鈴木花子氏のプロフィール写真" class="team-image" loading="lazy">
+                            <div class="team-name">鈴木 花子</div>
+                            <div class="team-role">倫理的AI研究 リーダー</div>
+                            <p>AI倫理の第一人者。人間中心のAI開発における倫理的ガイドラインを策定。</p>
+                        </div>
+                        
+                        <div class="team-member">
+                            <img src="images/researcher3.jpg" alt="佐藤次郎氏のプロフィール写真" class="team-image" loading="lazy">
+                            <div class="team-name">佐藤 次郎</div>
+                            <div class="team-role">ビジネスAI実装 リーダー</div>
+                            <p>企業におけるAI導入の専門家。中小企業向けAIソリューション開発を担当。</p>
+                        </div>
+                        
+                        <div class="team-member">
+                            <img src="images/researcher4.jpg" alt="田中美香氏のプロフィール写真" class="team-image" loading="lazy">
+                            <div class="team-name">田中 美香</div>
+                            <div class="team-role">社会実装研究 リーダー</div>
+                            <p>社会学とAIの融合研究者。地域社会におけるAI活用モデルの構築を推進。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">研究開発ロードマップ</h3>
+                <div class="section-content">
+                    <p>AIええやん協会では、短期的な成果と長期的なビジョンを組み合わせた研究開発ロードマップを策定しています。実用化フェーズとビジョナリーフェーズを並行して進め、バランスの取れた研究開発活動を展開しています。</p>
+                    
+                    <ul class="milestone-list">
+                        <li class="milestone-item">
+                            <div class="milestone-date">2024年</div>
+                            <div class="milestone-title">基盤技術開発フェーズ</div>
+                            <p>大阪方言対応AI言語モデルの開発、中小企業向け業務分析AIプロトタイプの完成</p>
+                        </li>
+                        
+                        <li class="milestone-item">
+                            <div class="milestone-date">2025年</div>
+                            <div class="milestone-title">実証実験フェーズ</div>
+                            <p>開発したAIシステムの実環境での検証、大阪市内の協力企業10社での試験運用開始</p>
+                        </li>
+                        
+                        <li class="milestone-item">
+                            <div class="milestone-date">2026年</div>
+                            <div class="milestone-title">社会実装フェーズ</div>
+                            <p>研究成果の商用化、AIソリューションの一般提供開始、地域特化型AIプラットフォームの構築</p>
+                        </li>
+                        
+                        <li class="milestone-item">
+                            <div class="milestone-date">2027年以降</div>
+                            <div class="milestone-title">展開・発展フェーズ</div>
+                            <p>開発技術の全国展開、次世代AI研究の本格化、国際連携プロジェクトの始動</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">研究開発成果と発表</h3>
+                <div class="section-content">
+                    <p>AIええやん協会では、研究成果を積極的に社会に還元するため、学術論文の発表やオープンソースでの技術公開、一般向けセミナーなど様々な形で情報発信を行っています。</p>
+                    
+                    <h4>学術発表</h4>
+                    <ul>
+                        <li>「大阪方言に特化した自然言語処理モデルの構築と評価」AI学会誌 Vol.15, No.3 (2024)</li>
+                        <li>「地域文化を考慮したAIシステムの設計原則」HCI国際会議 (2024)</li>
+                        <li>「少量データでの効率的な業務プロセス最適化AI」応用情報学会 第45回全国大会 (2025)</li>
+                    </ul>
+                    
+                    <h4>技術報告書</h4>
+                    <ul>
+                        <li>「中小企業向けAI導入ガイドライン」(2024年10月発行)</li>
+                        <li>「大阪文化継承プロジェクト中間報告」(2025年1月発行)</li>
+                        <li>「高齢者見守りAIシステム実証実験結果報告」(2025年4月発行予定)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">研究開発パートナー</h3>
+                <div class="section-content">
+                    <p>AIええやん協会の研究開発活動は、多くの協力パートナーとの連携によって支えられています。大学や研究機関、企業、自治体など多様なステークホルダーとのコラボレーションを通じて、革新的な研究成果の創出を目指しています。</p>
+                    
+                    <h4>主要連携パートナー</h4>
+                    <ul>
+                        <li>大阪大学 AI研究センター</li>
+                        <li>関西AI技術コンソーシアム</li>
+                        <li>大阪市 イノベーション推進課</li>
+                        <li>関西経済連合会 デジタル変革委員会</li>
+                        <li>大阪商工会議所</li>
+                        <li>日本AI倫理協議会</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="cta-box">
+                <h3 class="cta-title">研究プロジェクトへの参加・協力</h3>
+                <p>AIええやん協会では、研究プロジェクトに参加いただける企業・団体・個人の方を随時募集しています。AI技術の開発者だけでなく、実証実験にご協力いただける企業様、ユーザー視点でのフィードバックをいただける一般の方など、様々な形での参画が可能です。</p>
+                <a href="index.html#contact" class="cta-btn">お問い合わせはこちら</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/ai_eeyan_declaration_logo.png" alt="AIええやん協会ロゴ" class="footer-logo-img" loading="lazy">
+            </div>
+        </div>
+        <div class="footer-links">
+            <ul>
+                <li><a href="about.html">当協会について</a></li>
+                <li><a href="rules.html">会員規則</a></li>
+                <li><a href="privacy.html">個人情報保護方針</a></li>
+            </ul>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2025 AIええやん協会. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script defer>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('nav');
+            const overlay = document.querySelector('.overlay');
+            const navLinks = document.querySelectorAll('nav ul li a');
+            
+            // メニュー開閉機能
+            menuToggle.addEventListener('click', function() {
+                nav.classList.toggle('show');
+                overlay.classList.toggle('show');
+                document.body.classList.toggle('no-scroll');
+            });
+            
+            // オーバーレイクリックでメニューを閉じる
+            overlay.addEventListener('click', function() {
+                nav.classList.remove('show');
+                overlay.classList.remove('show');
+                document.body.classList.remove('no-scroll');
+            });
+            
+            // ナビゲーションリンククリックでメニューを閉じる
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    nav.classList.remove('show');
+                    overlay.classList.remove('show');
+                    document.body.classList.remove('no-scroll');
+                });
+            });
+            
+            // リサイズ時に表示を調整
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    nav.classList.remove('show');
+                    overlay.classList.remove('show');
+                    document.body.classList.remove('no-scroll');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
