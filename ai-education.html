@@ -4,398 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Cache-Control" content="max-age=31536000, public">
-    <meta name="description" content="AIええやん協会のAI教育プログラム - AI時代を生きる力を育む教育活動を大阪から推進します">
+    <meta name="description" content="AIええやん協会の「ええやん事例集」＆公式メディア - AIの活用事例紹介や最新情報発信を通じて、AI導入のハードルを下げる活動を行っています。">
+    <meta name="keywords" content="AIええやん協会, AI活用事例, AI導入, 公式メディア, 事例集, 大阪, 中小企業, AI実践例">
+    <meta name="author" content="AIええやん協会">
+    <title>「ええやん事例集」＆公式メディア運営 | AIええやん協会</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- ファビコン設定 -->
     <link rel="icon" href="ファビコン.png" type="image/png">
     <link rel="shortcut icon" href="ファビコン.png" type="image/png">
-    <!-- iOS/Android ホーム画面用のアイコン設定 -->
-    <link rel="apple-touch-icon" href="ファビコン.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="ファビコン.png">
-    <meta name="apple-mobile-web-app-title" content="AIええやん協会">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <!-- Android用設定 -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#0068B7"> <!-- 大阪の青色を使用 -->
-    <meta name="msapplication-TileColor" content="transparent"> <!-- Microsoft Tile の背景色を透明に -->
-    <title>AI教育プログラム - AIええやん協会</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="favicon_style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    <style>
-        .page-container {
-            max-width: 1000px;
-            margin: 3rem auto;
-            padding: 3rem 2rem;
-            background-color: var(--white);
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-        }
-        
-        .page-title {
-            color: var(--primary-color);
-            margin-bottom: 2.5rem;
-            position: relative;
-            display: inline-block;
-            font-size: 2rem;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 0.5rem;
-        }
-        
-        .section {
-            margin-bottom: 3rem;
-        }
-        
-        .section-title {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-content {
-            line-height: 1.8;
-        }
-        
-        .section-content p {
-            margin-bottom: 1.2rem;
-        }
-        
-        .highlight-box {
-            background-color: var(--primary-color-light);
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-        }
-        
-        .highlight-title {
-            font-weight: bold;
-            color: var(--primary-color);
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .highlight-title i {
-            margin-right: 0.8rem;
-            font-size: 1.5rem;
-        }
-        
-        .program-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .program-card {
-            background-color: var(--bg-light);
-            border-radius: 10px;
-            padding: 1.5rem;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .program-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .program-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background-color: var(--primary-color);
-        }
-        
-        .program-card h4 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-        
-        .program-tag {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background-color: var(--primary-color);
-            color: var(--white);
-            font-size: 0.8rem;
-            padding: 0.3rem 0.7rem;
-            border-radius: 20px;
-        }
-        
-        .program-details {
-            margin-top: 1.5rem;
-        }
-        
-        .program-details p {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.8rem;
-        }
-        
-        .program-details i {
-            margin-right: 0.8rem;
-            color: var(--primary-color);
-            width: 20px;
-            text-align: center;
-        }
-        
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .testimonial-card {
-            background-color: var(--white);
-            border-radius: 10px;
-            padding: 1.5rem;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-            position: relative;
-        }
-        
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: -10px;
-            left: 10px;
-            font-size: 4rem;
-            color: var(--primary-color);
-            opacity: 0.2;
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 1.5rem;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-        
-        .testimonial-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 1rem;
-        }
-        
-        .testimonial-info h4 {
-            margin: 0;
-            font-size: 1rem;
-        }
-        
-        .testimonial-info p {
-            margin: 0;
-            font-size: 0.9rem;
-            color: var(--text-color-light);
-        }
-        
-        .teacher-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .teacher-card {
-            text-align: center;
-        }
-        
-        .teacher-avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 1rem;
-            border: 3px solid var(--primary-color-light);
-        }
-        
-        .teacher-name {
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        
-        .teacher-role {
-            font-size: 0.9rem;
-            color: var(--text-color-light);
-            margin-bottom: 1rem;
-        }
-        
-        .faq-list {
-            margin-top: 2rem;
-        }
-        
-        .faq-item {
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid var(--bg-light);
-            padding-bottom: 1.5rem;
-        }
-        
-        .faq-question {
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-bottom: 0.8rem;
-            position: relative;
-            padding-left: 1.8rem;
-        }
-        
-        .faq-question::before {
-            content: 'Q';
-            position: absolute;
-            left: 0;
-            top: 0;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-        
-        .faq-answer {
-            position: relative;
-            padding-left: 1.8rem;
-        }
-        
-        .faq-answer::before {
-            content: 'A';
-            position: absolute;
-            left: 0;
-            top: 0;
-            font-weight: bold;
-            color: var(--secondary-color);
-        }
-        
-        .calendar-box {
-            background-color: var(--bg-light);
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .calendar-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .calendar-title {
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-        
-        .calendar-events {
-            margin-top: 1rem;
-        }
-        
-        .calendar-event {
-            display: flex;
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px dashed var(--border-color);
-        }
-        
-        .calendar-date {
-            min-width: 100px;
-            padding-right: 1rem;
-            font-weight: bold;
-        }
-        
-        .calendar-info h4 {
-            margin: 0 0 0.5rem 0;
-            font-size: 1rem;
-        }
-        
-        .calendar-info p {
-            margin: 0;
-            font-size: 0.9rem;
-        }
-        
-        .calendar-tag {
-            display: inline-block;
-            background-color: var(--primary-color-light);
-            color: var(--primary-color);
-            font-size: 0.8rem;
-            padding: 0.2rem 0.5rem;
-            border-radius: 3px;
-            margin-right: 0.5rem;
-        }
-        
-        .cta-box {
-            background-color: var(--primary-color-light);
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            margin-top: 3rem;
-        }
-        
-        .cta-title {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
-        
-        .cta-btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-        
-        .cta-btn:hover {
-            background-color: var(--primary-color-dark);
-            transform: translateY(-3px);
-        }
-        
-        @media (max-width: 768px) {
-            .page-container {
-                padding: 2rem 1.5rem;
-                margin: 2rem 1rem;
-            }
-            
-            .page-title {
-                font-size: 1.8rem;
-            }
-            
-            .section-title {
-                font-size: 1.3rem;
-            }
-            
-            .program-grid, .testimonial-grid, .teacher-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .calendar-event {
-                flex-direction: column;
-            }
-            
-            .calendar-date {
-                margin-bottom: 0.5rem;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="overlay"></div>
     <header>
         <div class="logo-container">
-            <img src="images/ai_eeyan_declaration_logo.png" alt="AIええやん協会ロゴ" class="logo" loading="lazy">
             <h1><a href="index.html" class="site-title">AIええやん協会</a></h1>
             <p style="font-size: 12px; margin-top: 5px; color: #666;">当HPは制作中の為、仮の内容を記載しております。</p>
         </div>
@@ -414,277 +36,168 @@
         </nav>
     </header>
 
-    <main>
-        <div class="page-container">
-            <h2 class="page-title">AI教育プログラムもあるで</h2>
-            
-            <div class="section">
-                <h3 class="section-title">AI教育への取り組み</h3>
-                <div class="section-content">
-                    <p>AIええやん協会では、AI時代を生きるための必要なスキルと知識を身につけるための多様な教育プログラムを提供しています。技術的な専門知識がない方でも、AIの基礎から応用まで段階的に学べるカリキュラムを用意し、個人の興味や目的に合わせた学習環境を整えています。</p>
-                    
-                    <p>大阪らしい「やってみよか」精神を大切に、難しく考えずまずは体験してみることからAIへの理解を深める、実践的なアプローチが特徴です。子どもから高齢者まで、また初心者から専門家まで、様々な対象に向けたプログラムを展開しています。</p>
-                    
-                    <div class="highlight-box">
-                        <h4 class="highlight-title"><i class="fas fa-lightbulb"></i>私たちの教育理念</h4>
-                        <p>AIえええやん協会の教育プログラムは、「AI技術を使いこなす力」と「AIとどう付き合うかを考える力」の両方を育むことを目指しています。単なる技術習得だけでなく、AIが社会や私たちの生活にどのような影響を与えるかを多角的に考え、主体的に向き合う力を養います。</p>
-                        <p>また、「誰一人取り残さない」をモットーに、様々な背景や条件を持つ人々がAI技術にアクセスできるよう、多様なニーズに応じたプログラムを提供しています。</p>
+    <main class="detail-page">
+        <section class="detail-header">
+            <h2>「ええやん事例集」＆公式メディア運営</h2>
+            <p class="breadcrumb"><a href="index.html">ホーム</a> &gt; <a href="index.html#services">事業内容</a> &gt; 「ええやん事例集」＆公式メディア運営</p>
+        </section>
+
+        <section class="detail-content">
+            <div class="detail-image">
+                <img src="images/case-studies.jpg" alt="AIええやん事例集のイメージ" loading="lazy">
+            </div>
+
+            <div class="detail-text">
+                <h3>身近なAI活用事例で「うちでもできそう」を広める</h3>
+                <p>AIは難しそう、導入にはコストがかかる、どう活用すればいいかわからない...そんな不安や疑問を持つ方々のために、AIええやん協会では「ええやん事例集」と公式メディアを通じて、身近なAI活用事例を紹介しています。</p>
+                
+                <p>特に中小企業や地域の組織・団体が実践している具体的なAI活用例を「ほんまにええやん！」と思える形で紹介することで、「うちでもできそう」と感じていただき、AI導入への不安やハードルを下げることを目指しています。大阪らしい親しみやすさと実践的なアプローチで、AI活用の裾野を広げる活動を展開しています。</p>
+
+                <h3>「ええやん事例集」の特徴</h3>
+                <ul class="feature-list">
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>中小企業・地域密着型の事例</h4>
+                            <p>大企業だけでなく、中小企業や地域の組織・団体での実践事例を重点的に紹介。身近で実現可能なAI活用法がわかります。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>コスト・効果・導入の流れを明示</h4>
+                            <p>各事例では、導入コスト、実際の効果、導入までの流れを具体的に記載。導入検討の参考になる情報を提供しています。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>業種・用途別にカテゴリ分類</h4>
+                            <p>製造、小売、サービス、教育、行政など業種別、また業務効率化、顧客対応、マーケティングなど用途別に整理し、探しやすく構成しています。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>実践者の声と連絡先</h4>
+                            <p>実際に導入・活用している担当者の生の声と、許可を得た企業・団体については問い合わせ先を掲載。より詳しく知りたい方は直接コンタクトできます。</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <h3>公開中の主な事例</h3>
+                <div class="case-studies">
+                    <div class="case-study-card">
+                        <h4>【製造業】町工場の検品作業をAIで効率化</h4>
+                        <p class="case-meta">導入コスト：初期30万円、月額2万円 / 効果：検品時間50%削減、不良品発見率15%向上</p>
+                        <p>大阪市内の金属部品製造の町工場が、画像認識AIを活用して検品作業を効率化。専門知識がなくても使えるシンプルなシステムで、熟練工の負担軽減と品質向上を両立しました。</p>
+                        <a href="#" class="case-link">詳細を見る →</a>
+                    </div>
+                    <div class="case-study-card">
+                        <h4>【小売業】無料のAIツールで始める店舗マーケティング</h4>
+                        <p class="case-meta">導入コスト：実質0円（無料ツールのみ使用） / 効果：SNS投稿の反応率3倍、来店客数20%増加</p>
+                        <p>大阪府堺市の雑貨店が、無料で使えるAIツールを組み合わせてSNSマーケティングを強化。商品写真の加工、投稿文の作成、顧客分析などをAIでサポートし、マーケティング効果を大幅に向上させました。</p>
+                        <a href="#" class="case-link">詳細を見る →</a>
+                    </div>
+                    <div class="case-study-card">
+                        <h4>【飲食業】AIを活用した食品ロス削減の取り組み</h4>
+                        <p class="case-meta">導入コスト：初期20万円、月額1.5万円 / 効果：食品廃棄量30%削減、原価率3%改善</p>
+                        <p>大阪市内の居酒屋チェーンが、AIによる需要予測システムを導入し、食材の発注量最適化を実現。天候や曜日、イベントなどの要素を学習したAIが適切な仕入れ量を提案し、食品ロスと原価の両方を削減しました。</p>
+                        <a href="#" class="case-link">詳細を見る →</a>
+                    </div>
+                    <div class="case-study-card">
+                        <h4>【行政】AIチャットボットによる住民問い合わせ対応</h4>
+                        <p class="case-meta">導入コスト：初期50万円、月額3万円 / 効果：問い合わせ対応時間70%削減、住民満足度向上</p>
+                        <p>大阪府内の自治体が、24時間対応のAIチャットボットを導入し、住民からの一般的な問い合わせに自動対応。職員の負担軽減と住民サービス向上を両立しました。</p>
+                        <a href="#" class="case-link">詳細を見る →</a>
                     </div>
                 </div>
-            </div>
-            
-            <div class="section">
-                <h3 class="section-title">教育プログラムのラインナップ</h3>
-                <div class="section-content">
-                    <p>AIええやん協会では、対象年齢や目的に応じた多様な教育プログラムを展開しています。各プログラムは定期的に内容を更新し、最新のAI技術動向を反映しています。</p>
+
+                <h3>公式メディア「AIええやんジャーナル」</h3>
+                <div class="media-section">
+                    <p>AIええやん協会では、AIの最新動向や活用のヒント、わかりやすい解説記事などを発信する公式メディア「AIええやんジャーナル」を運営しています。隔週で更新され、以下のようなコンテンツを提供しています：</p>
                     
-                    <div class="program-grid">
-                        <div class="program-card">
-                            <span class="program-tag">子ども向け</span>
-                            <h4>AIキッズプログラム</h4>
-                            <p>小学生を対象に、ゲームやクイズを通じてAIの基本概念を楽しく学ぶプログラム。創造性とデジタルリテラシーを同時に育みます。</p>
-                            <div class="program-details">
-                                <p><i class="fas fa-user-friends"></i>対象: 小学3年生〜6年生</p>
-                                <p><i class="fas fa-calendar"></i>期間: 年4回（各2時間×3回）</p>
-                                <p><i class="fas fa-map-marker-alt"></i>場所: 大阪市内の公共施設</p>
-                            </div>
+                    <div class="media-categories">
+                        <div class="media-category">
+                            <h4><i class="fas fa-newspaper"></i> 最新AI動向</h4>
+                            <p>最新のAI技術や活用トレンドを、わかりやすくかみ砕いて解説。難しい専門用語を使わず、AIの進化を身近に感じられる記事を提供。</p>
                         </div>
-                        
-                        <div class="program-card">
-                            <span class="program-tag">ビジネス向け</span>
-                            <h4>AIビジネス活用講座</h4>
-                            <p>企業のAI導入担当者向けに、実際のビジネス課題解決に役立つAI活用法を学ぶ実践的な講座。業種別の事例やワークショップを通じて即実践できるスキルを習得します。</p>
-                            <div class="program-details">
-                                <p><i class="fas fa-user-friends"></i>対象: 企業担当者、経営者</p>
-                                <p><i class="fas fa-calendar"></i>期間: 2ヶ月間（週1回、全8回）</p>
-                                <p><i class="fas fa-map-marker-alt"></i>場所: オンラインまたは大阪オフィス</p>
-                            </div>
+                        <div class="media-category">
+                            <h4><i class="fas fa-lightbulb"></i> 活用アイデア集</h4>
+                            <p>様々な業種・業務でのAI活用のアイデアやヒントを紹介。少ない労力とコストで始められる活用法を中心に取り上げています。</p>
                         </div>
-                        
-                        <div class="program-card">
-                            <span class="program-tag">一般向け</span>
-                            <h4>AIリテラシー基礎講座</h4>
-                            <p>AIの基本的な仕組みや活用法、社会への影響などを学ぶ一般向け講座。日常生活でのAI活用から倫理的問題まで幅広くカバーします。</p>
-                            <div class="program-details">
-                                <p><i class="fas fa-user-friends"></i>対象: 一般市民（年齢制限なし）</p>
-                                <p><i class="fas fa-calendar"></i>期間: 単発講座（3時間）</p>
-                                <p><i class="fas fa-map-marker-alt"></i>場所: 大阪市内各所</p>
-                            </div>
+                        <div class="media-category">
+                            <h4><i class="fas fa-hands-helping"></i> 導入サポート情報</h4>
+                            <p>AI導入時の注意点やよくある課題への対応策、活用できる支援制度や補助金情報など、導入をサポートする情報を提供。</p>
                         </div>
-                        
-                        <div class="program-card">
-                            <span class="program-tag">シニア向け</span>
-                            <h4>シニアのためのAI入門</h4>
-                            <p>高齢者を対象に、AIを活用した生活便利術を紹介する講座。スマートスピーカーの活用法からオンラインサービスの便利な使い方まで、実践的なスキルを身につけます。</p>
-                            <div class="program-details">
-                                <p><i class="fas fa-user-friends"></i>対象: 60歳以上</p>
-                                <p><i class="fas fa-calendar"></i>期間: 月1回（2時間）</p>
-                                <p><i class="fas fa-map-marker-alt"></i>場所: 地域コミュニティセンター</p>
-                            </div>
-                        </div>
-                        
-                        <div class="program-card">
-                            <span class="program-tag">教育関係者向け</span>
-                            <h4>教育者のためのAI活用法</h4>
-                            <p>教師や教育関係者向けに、教育現場でのAI活用方法や教育効果を高めるためのテクニックを学ぶ講座。AI時代の新しい学びの形を探求します。</p>
-                            <div class="program-details">
-                                <p><i class="fas fa-user-friends"></i>対象: 教育関係者</p>
-                                <p><i class="fas fa-calendar"></i>期間: 学期ごと（全5回）</p>
-                                <p><i class="fas fa-map-marker-alt"></i>場所: オンラインまたは教育機関</p>
-                            </div>
-                        </div>
-                        
-                        <div class="program-card">
-                            <span class="program-tag">技術者向け</span>
-                            <h4>AI開発実践講座</h4>
-                            <p>エンジニアやデータサイエンティスト向けの実践的なAI開発スキルを学ぶ上級講座。最新のAIフレームワークやモデル構築手法を実践形式で習得します。</p>
-                            <div class="program-details">
-                                <p><i class="fas fa-user-friends"></i>対象: エンジニア、開発者</p>
-                                <p><i class="fas fa-calendar"></i>期間: 3ヶ月間（週1回、全12回）</p>
-                                <p><i class="fas fa-map-marker-alt"></i>場所: オンラインまたはテックハブ</p>
-                            </div>
+                        <div class="media-category">
+                            <h4><i class="fas fa-user-friends"></i> インタビュー</h4>
+                            <p>AIを成功裏に活用している企業・団体の担当者や、AI研究者・専門家へのインタビュー記事を通じて、現場の生の声をお届け。</p>
                         </div>
                     </div>
+
+                    <div class="recent-articles">
+                        <h4>最近の記事</h4>
+                        <ul class="article-list">
+                            <li>
+                                <span class="article-date">2025.5.10</span>
+                                <a href="#" class="article-title">【初心者向け】ChatGPTとClaudeの違いを徹底比較！業務で使うならどっち？</a>
+                            </li>
+                            <li>
+                                <span class="article-date">2025.4.26</span>
+                                <a href="#" class="article-title">無料で始める！小規模店舗のためのAIマーケティング入門</a>
+                            </li>
+                            <li>
+                                <span class="article-date">2025.4.12</span>
+                                <a href="#" class="article-title">【インタビュー】町工場の匠の技をAIで継承する取り組み</a>
+                            </li>
+                            <li>
+                                <span class="article-date">2025.3.29</span>
+                                <a href="#" class="article-title">2025年最新！中小企業向けAI導入補助金・支援制度まとめ</a>
+                            </li>
+                            <li>
+                                <span class="article-date">2025.3.15</span>
+                                <a href="#" class="article-title">画像生成AIで商品写真が劇的に進化！プロモーション事例5選</a>
+                            </li>
+                        </ul>
+                        <a href="blog.html" class="view-all-link">すべての記事を見る →</a>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="section">
-                <h3 class="section-title">参加者の声</h3>
-                <div class="section-content">
-                    <p>AIええやん協会の教育プログラムに参加された方々からの声をご紹介します。様々な背景を持つ参加者がどのように学びを得たかをお読みください。</p>
+
+                <h3>メディア掲載・講演依頼</h3>
+                <div class="media-requests">
+                    <p>AIええやん協会では、AI活用事例の紹介や解説に関する取材・メディア掲載、講演依頼を受け付けています。一般の方々にもわかりやすくAIの可能性や活用法をお伝えすることで、AIリテラシー向上に貢献します。</p>
                     
-                    <div class="testimonial-grid">
-                        <div class="testimonial-card">
-                            <p class="testimonial-text">難しそうと思っていたAIが、実は身近に使えるものだと気づかされました。講師の方が大阪弁で分かりやすく説明してくれたおかげで、複雑な概念も理解できました。今では仕事の効率が格段に上がっています！</p>
-                            <div class="testimonial-author">
-                                <img src="images/testimonial1.jpg" alt="山本さんの写真" class="testimonial-avatar" loading="lazy">
-                                <div class="testimonial-info">
-                                    <h4>山本 健太</h4>
-                                    <p>中小企業経営者（45歳）</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="testimonial-card">
-                            <p class="testimonial-text">孫からスマホの使い方を教えてもらうのが恥ずかしかったのですが、シニア向けAI講座に参加してからは、逆に孫に新しいアプリの使い方を教えられるようになりました。同世代の仲間もできて、とても楽しいです。</p>
-                            <div class="testimonial-author">
-                                <img src="images/testimonial2.jpg" alt="田中さんの写真" class="testimonial-avatar" loading="lazy">
-                                <div class="testimonial-info">
-                                    <h4>田中 幸子</h4>
-                                    <p>主婦（68歳）</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="testimonial-card">
-                            <p class="testimonial-text">AIキッズプログラムで学んだことを学校の自由研究で発表したら、先生にもクラスメイトにもすごく褒められました！ロボットと友達になる方法を考えるのがとても楽しかったです。</p>
-                            <div class="testimonial-author">
-                                <img src="images/testimonial3.jpg" alt="佐藤くんの写真" class="testimonial-avatar" loading="lazy">
-                                <div class="testimonial-info">
-                                    <h4>佐藤 太一</h4>
-                                    <p>小学5年生</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <h4>これまでの主な掲載・講演実績</h4>
+                    <ul class="media-appearances">
+                        <li>地元テレビ局「おおさかほんわかTV」特集「AI時代の働き方革命」出演</li>
+                        <li>経済誌「週刊ビジネス最前線」AIシリーズ取材協力</li>
+                        <li>大阪商工会議所セミナー「中小企業のためのAI活用」講師</li>
+                        <li>大阪市立大学公開講座「AIと地域の未来」パネリスト</li>
+                        <li>地元FM局「AI活用ラジオ」レギュラーコーナー出演</li>
+                    </ul>
                 </div>
-            </div>
-            
-            <div class="section">
-                <h3 class="section-title">講師陣の紹介</h3>
-                <div class="section-content">
-                    <p>AIええやん協会の教育プログラムは、AI技術の専門家だけでなく、教育方法や社会科学の専門家など多様なバックグラウンドを持つ講師陣によって支えられています。</p>
+
+                <h3>事例提供・取材協力のお願い</h3>
+                <div class="collaboration-section">
+                    <p>AIええやん協会では、ええやん事例集の充実のため、AI活用事例の提供や取材協力をしていただける企業・団体を募集しています。皆様の取り組みを広く紹介することで、大阪・関西地域のAI活用を促進し、地域全体のデジタル競争力向上に貢献しましょう。</p>
                     
-                    <div class="teacher-grid">
-                        <div class="teacher-card">
-                            <img src="images/teacher1.jpg" alt="中村教授のプロフィール写真" class="teacher-avatar" loading="lazy">
-                            <div class="teacher-name">中村 誠一 教授</div>
-                            <div class="teacher-role">AI技術統括責任者</div>
-                            <p>大阪工科大学AI研究所所長。企業での開発経験も豊富で、複雑な技術を分かりやすく説明する能力に定評あり。</p>
-                        </div>
-                        
-                        <div class="teacher-card">
-                            <img src="images/teacher2.jpg" alt="吉田氏のプロフィール写真" class="teacher-avatar" loading="lazy">
-                            <div class="teacher-name">吉田 明美</div>
-                            <div class="teacher-role">教育プログラム開発責任者</div>
-                            <p>元小学校教諭。教育心理学の知見を活かした、年齢に合わせた効果的な学習プログラムを開発。</p>
-                        </div>
-                        
-                        <div class="teacher-card">
-                            <img src="images/teacher3.jpg" alt="高橋氏のプロフィール写真" class="teacher-avatar" loading="lazy">
-                            <div class="teacher-name">高橋 健太郎</div>
-                            <div class="teacher-role">ビジネスAI活用講師</div>
-                            <p>IT企業役員を経て教育者に転身。実務経験を活かした実践的なビジネスAI活用法を指導。</p>
-                        </div>
-                        
-                        <div class="teacher-card">
-                            <img src="images/teacher4.jpg" alt="松本氏のプロフィール写真" class="teacher-avatar" loading="lazy">
-                            <div class="teacher-name">松本 さくら</div>
-                            <div class="teacher-role">シニア向けプログラム担当</div>
-                            <p>高齢者福祉の専門家。デジタルデバイドの解消に向けた取り組みに長年従事。</p>
-                        </div>
-                    </div>
+                    <h4>事例提供のメリット</h4>
+                    <ul>
+                        <li>自社の先進的な取り組みをPRできる</li>
+                        <li>地域社会のAI活用促進に貢献できる</li>
+                        <li>協会ネットワークを通じた企業間交流の機会が得られる</li>
+                        <li>AIええやん協会の各種イベント・セミナーへの優先案内</li>
+                    </ul>
+                </div>
+
+                <div class="cta-section">
+                    <h3>AIの成功事例を共有し、広げていきましょう</h3>
+                    <p>あなたの会社や組織でのAI活用事例をぜひ教えてください。また、AIに関するお悩みやご質問もお気軽にお寄せください。共に学び、共に成長する「AIええやん」の輪を広げていきましょう！</p>
+                    <a href="index.html#contact" class="cta-button">お問い合わせ・事例提供はこちら</a>
                 </div>
             </div>
-            
-            <div class="section">
-                <h3 class="section-title">よくある質問</h3>
-                <div class="section-content">
-                    <div class="faq-list">
-                        <div class="faq-item">
-                            <p class="faq-question">プログラミングの経験がなくても参加できますか？</p>
-                            <p class="faq-answer">はい、ほとんどのプログラムは初心者向けに設計されており、プログラミング経験は必要ありません。技術者向けの一部コースのみ、基本的なプログラミング知識を前提としています。</p>
-                        </div>
-                        
-                        <div class="faq-item">
-                            <p class="faq-question">子ども向けプログラムは何歳から参加できますか？</p>
-                            <p class="faq-answer">AIキッズプログラムは小学3年生（8〜9歳）から参加可能です。年齢に応じた内容と教材を用意していますので、お子様の興味に合わせてご参加いただけます。</p>
-                        </div>
-                        
-                        <div class="faq-item">
-                            <p class="faq-question">オンラインでも受講できますか？</p>
-                            <p class="faq-answer">はい、多くのプログラムはオンライン受講オプションを用意しています。特にビジネス向けコースや技術者向けコースはフルオンライン対応です。ただし、体験型ワークショップなど一部のプログラムは対面形式のみとなっています。</p>
-                        </div>
-                        
-                        <div class="faq-item">
-                            <p class="faq-question">費用はどれくらいかかりますか？</p>
-                            <p class="faq-answer">プログラムによって異なりますが、子ども向けや一般市民向けの基礎講座は無料または低価格で提供しています。ビジネス向けや専門的なコースは有料ですが、中小企業や非営利団体には割引制度があります。詳細は各プログラムのページをご確認ください。</p>
-                        </div>
-                        
-                        <div class="faq-item">
-                            <p class="faq-question">企業向けにカスタマイズしたプログラムは提供していますか？</p>
-                            <p class="faq-answer">はい、企業の業種や課題に合わせたカスタマイズプログラムを提供しています。まずはお問い合わせフォームからご相談ください。ニーズに合わせたプログラムをご提案します。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="section">
-                <h3 class="section-title">今後の開催予定</h3>
-                <div class="section-content">
-                    <p>AIええやん協会では、定期的に様々な教育プログラムやイベントを開催しています。以下は近日開催予定のプログラムです。</p>
-                    
-                    <div class="calendar-box">
-                        <div class="calendar-header">
-                            <h4 class="calendar-title">近日開催プログラム</h4>
-                        </div>
-                        
-                        <div class="calendar-events">
-                            <div class="calendar-event">
-                                <div class="calendar-date">2025年5月15日</div>
-                                <div class="calendar-info">
-                                    <h4>AIリテラシー基礎講座</h4>
-                                    <p><span class="calendar-tag">一般向け</span><span class="calendar-tag">無料</span></p>
-                                    <p>大阪市立中央図書館にて開催。AIの基本と日常生活での活用法を学びます。</p>
-                                </div>
-                            </div>
-                            
-                            <div class="calendar-event">
-                                <div class="calendar-date">2025年5月22日〜</div>
-                                <div class="calendar-info">
-                                    <h4>AIビジネス活用講座（全8回）</h4>
-                                    <p><span class="calendar-tag">ビジネス向け</span><span class="calendar-tag">有料</span></p>
-                                    <p>毎週木曜日18:30〜20:30、大阪イノベーションハブにて開催。オンライン参加も可能。</p>
-                                </div>
-                            </div>
-                            
-                            <div class="calendar-event">
-                                <div class="calendar-date">2025年6月8日</div>
-                                <div class="calendar-info">
-                                    <h4>親子で学ぶAIワークショップ</h4>
-                                    <p><span class="calendar-tag">家族向け</span><span class="calendar-tag">有料</span></p>
-                                    <p>天王寺区民センターにて開催。小学生とその保護者を対象に、AIを使った創作活動を体験します。</p>
-                                </div>
-                            </div>
-                            
-                            <div class="calendar-event">
-                                <div class="calendar-date">2025年6月20日</div>
-                                <div class="calendar-info">
-                                    <h4>シニアのためのAI入門</h4>
-                                    <p><span class="calendar-tag">シニア向け</span><span class="calendar-tag">無料</span></p>
-                                    <p>淀川区老人福祉センターにて開催。スマートスピーカーの活用から始めるAI生活。</p>
-                                </div>
-                            </div>
-                            
-                            <div class="calendar-event">
-                                <div class="calendar-date">2025年7月</div>
-                                <div class="calendar-info">
-                                    <h4>夏休み特別企画：AIキッズキャンプ</h4>
-                                    <p><span class="calendar-tag">子ども向け</span><span class="calendar-tag">有料</span></p>
-                                    <p>7月下旬に2泊3日で開催予定。詳細は近日公開。</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="cta-box">
-                <h3 class="cta-title">プログラムへの参加申し込み</h3>
-                <p>AIええやん協会の教育プログラムに興味をお持ちいただきありがとうございます。各プログラムの詳細や申し込み方法については、お問い合わせフォームからお気軽にご連絡ください。企業研修や団体向けカスタマイズプログラムについてもご相談を承っています。</p>
-                <a href="index.html#contact" class="cta-btn">お問い合わせはこちら</a>
-            </div>
-        </div>
+        </section>
     </main>
 
     <footer>
