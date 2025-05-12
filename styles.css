@@ -60,6 +60,7 @@ header {
     text-decoration: none;
     transition: color 0.3s ease;
     font-weight: bold;
+    font-size: 1.4em; /* 2サイズ大きく */
 }
 
 .site-title:hover {
