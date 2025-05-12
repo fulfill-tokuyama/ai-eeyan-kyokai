@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="max-age=31536000, public">
+    <meta name="description" content="AIええやん協会は大阪を拠点にAI技術の健全な発展と普及を目指す団体です。人とAIが共に歩む社会の実現に向けて、AI教育、倫理ガイドライン、企業支援活動を行っています。">
+    <meta name="keywords" content="AIええやん協会, 人工知能, AI活用, 大阪, AI教育, AI倫理, AI普及, AI技術">
+    <meta name="author" content="AIええやん協会">
+    <meta property="og:title" content="AIええやん協会 - 人とAIが共に歩む社会の実現">
+    <meta property="og:description" content="大阪を拠点にAI技術の健全な発展と普及を推進する非営利団体。AI教育、倫理ガイドライン、企業支援を通じてAIリテラシー向上に取り組んでいます。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ai-eeyan-kyokai.jp/">
+    <meta property="og:image" content="https://ai-eeyan-kyokai.jp/images/ai_eeyan_logo.png">
+    <meta property="og:site_name" content="AIええやん協会">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AIええやん協会 - 人とAIが共に歩む社会の実現">
+    <meta name="twitter:description" content="大阪を拠点にAI技術の健全な発展と普及を推進する非営利団体。AI教育、倫理ガイドライン、企業支援を通じてAIリテラシー向上に取り組んでいます。">
+    <meta name="twitter:image" content="https://ai-eeyan-kyokai.jp/images/ai_eeyan_logo.png">
+    
+    <!-- ファビコン設定 -->
+    <link rel="icon" href="AI_eeyan_logo.png" type="image/png">
+    <link rel="shortcut icon" href="AI_eeyan_logo.png" type="image/png">
+    <!-- iOS/Android ホーム画面用のアイコン設定 -->
+    <link rel="apple-touch-icon" href="AI_eeyan_logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="AI_eeyan_logo.png">
+    <meta name="apple-mobile-web-app-title" content="AIええやん協会">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Android用設定 -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" type="image/png" sizes="32x32" href="AI_eeyan_logo.png">
+    <meta name="theme-color" content="#FF6347"> <!-- AIええやんをイメージした色 -->
+    <meta name="msapplication-TileColor" content="#FF6347"> <!-- Microsoft Tile の背景色 -->
+    
+    <title>AIええやん協会 | 人とAIが共に歩む社会を大阪から実現</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <style>
+        /* AIええやんテーマ用カスタムスタイル */
+        :root {
+            --primary-color: #FF6347; /* AIええやん色（トマト） */
+            --primary-dark: #E25B41; /* 濃いAIええやん色 */
+            --primary-gradient: linear-gradient(135deg, #FF6347, #E25B41);
+            --secondary-color: #4A90E2; /* AI色（青） */
+            --secondary-light: #61A5F8; /* 明るいAI色 */
+            --secondary-gradient: linear-gradient(135deg, #4A90E2, #61A5F8);
+            --accent-color: #FFD700; /* 大阪をイメージした金色 */
+            --text-color: #333333;
+            --bg-light: #FFF9F8; /* 薄いAIええやん色の背景 */
+            --white: #ffffff;
+        }
+
+        .site-title {
+            color: var(--primary-color) !important; /* 見出しをAIええやん色に */
+        }
+
+        /* AIええやん背景のヒーローセクション */
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)) !important;
+        }
+
+        .hero-text h2 {
+            text-shadow: 0 0 10px rgba(255, 99, 71, 0.7) !important;
+            color: #FFD700 !important; /* 大阪をイメージした金色に変更 */
+        }
+
+        /* AIアイコン */
+        .ai-icon {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            background-color: #4A90E2;
+            border-radius: 50%;
+            position: relative;
+            margin: 0 0.3em;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* サービスカードのスタイル調整 */
+        .service-card::before {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)) !important;
+        }
+
+        .service-card h3::after {
+            background-color: var(--primary-color) !important;
+        }
+
+        /* AIええやん星マーク */
+        .about-text p::before {
+            content: '💡' !important; /* AIを象徴する電球の絵文字に変更 */
+        }
+
+        /* CTA ボタン */
+        .ai-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 1.2rem 3rem;
+            font-size: 1.3rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(255, 99, 71, 0.3);
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .ai-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 99, 71, 0.4);
+        }
+
+        /* AI体験セクション */
+        .experience-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .experience-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .experience-card:hover .experience-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        /* AIカウンター */
+        .ai-counter {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .counter-item {
+            flex: 1;
+            min-width: 150px;
+            margin: 1rem;
+            padding: 2rem 1rem;
+            background-color: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .counter-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .counter-value {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .counter-title {
+            font-size: 1.2rem;
+            color: var(--text-color);
+        }
+
+        /* AIギャラリー */
+        .ai-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            aspect-ratio: 1 / 1;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: var(--white);
+            transform: translateY(100%);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* AIステップ */
+        .ai-steps {
+            counter-reset: step-counter;
+            margin: 2rem 0;
+        }
+
+        .ai-step {
+            position: relative;
+            padding: 1.5rem 1.5rem 1.5rem 4rem;
+            margin-bottom: 1.5rem;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .ai-step:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .ai-step::before {
+            content: counter(step-counter);
+            counter-increment: step-counter;
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        /* レスポンシブ調整 */
+        @media (max-width: 768px) {
+            .ai-counter {
+                flex-direction: column;
+            }
+            
+            .counter-item {
+                margin: 1rem 0;
+            }
+            
+            .ai-gallery {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <header>
+        <div class="logo-container">
+            <img src="AI_eeyan_logo.png" alt="AIええやん協会の公式ロゴマーク" class="logo" loading="lazy">
+            <h1><a href="ai-eeyan-lp.html" class="site-title">AIええやん協会</a></h1>
+            <p style="font-size: 12px; margin-top: 5px; color: #666;">当HPは制作中の為、仮の内容を記載しております。</p>
+        </div>
+        <button class="menu-toggle" aria-label="メニュー">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="#about">協会概要</a></li>
+                <li><a href="#services">事業内容</a></li>
+                <li><a href="#project">プロジェクト</a></li>
+                <li><a href="#declaration">AIええやん宣言</a></li>
+                <li><a href="#gallery">ギャラリー</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div class="hero-overlay"></div>
+        <img src="https://source.unsplash.com/random/1600x900/?artificial-intelligence,osaka" alt="AIと大阪の代表的なランドマークを組み合わせたイメージ画像" class="hero-image" loading="lazy">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>AIの力で未来を創るでぇ！</h2>
+                <p>人とAIが共に歩む社会の実現を目指して、ほんまにええやん！</p>
+                <div class="line-announce">
+                    <p class="line-small-text">AIええやん協会がLINE公式アカウントに登場！お得な情報を受け取るには、以下のリンクから友だち追加してください。</p>
+                    <a href="#" class="line-btn-container" target="_blank" rel="noopener noreferrer">
+                        友だち追加はこちら
+                    </a>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#project" class="btn primary-btn">プロジェクトを見る</a>
+                    <a href="#declaration" class="btn secondary-btn">AIええやん宣言</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section id="about">
+            <h2>協会概要</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>AIええやん協会は、大阪を拠点とする人工知能技術の健全な発展と社会への適切な導入を推進する非営利団体です。大阪城や太陽の塔のようにそびえ立つ革新的なAI技術を研究し、その可能性と課題について情報発信を行っています。</p>
+                    <p>私たちは、AIが人間の創造性を拡張し、社会課題の解決に貢献することを信じています。大阪万博の先進性を受け継ぎ、あべのハルカスのように高みを目指し、産学官の連携を促進し、AIリテラシーの向上に取り組んでいます。</p>
+                    <p>大阪の活気とイノベーションの精神を取り入れ、道頓堀の賑わいのように多様な視点と技術の融合を実現します。</p>
+                </div>
+                <div class="about-image">
+                    <img src="AI_eeyan_logo.png" alt="AIええやん協会ロゴ" class="about-logo" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <h2>事業内容</h2>
+            <div class="services-container">
+                <div class="service-card">
+                    <i class="fas fa-microscope service-icon"></i>
+                    <h3>AI研究支援やで</h3>
+                    <p>最新のAI技術研究を支援し、研究者間の交流を促進します。めっちゃ面白い研究会や勉強会を定期的に開催してまっせ。</p>
+                    <a href="#" class="service-link">詳細を見る →</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-balance-scale service-icon"></i>
+                    <h3>AI倫理ガイドライン策定やねん</h3>
+                    <p>AIの倫理的利用に関するガイドラインを策定し、企業や団体への普及活動を行っています。ちゃんとしたAI活用、それが大事やろ？</p>
+                    <a href="#" class="service-link">詳細を見る →</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-graduation-cap service-icon"></i>
+                    <h3>AI教育プログラムもあるで</h3>
+                    <p>学生や社会人向けにAI技術の基礎から応用までを学べる教育プログラムを提供してまっせ。なんぼでも学んで、AIマスターになったってや！</p>
+                    <a href="#" class="service-link">詳細を見る →</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="project">
+            <h2>AIええやんプロジェクト</h2>
+            <div class="project-content">
+                <div class="project-text">
+                    <h3>プロジェクト概要</h3>
+                    <p>AIええやんプロジェクトは、AIの素晴らしさと可能性を大阪から日本中に広めていくための取り組みです。大阪の素晴らしい文化として人と人とのつながりを大事にする「やってみよか」精神を活かし、AIを身近に感じてもらいたいと考えています。</p>
+                    
+                    <h3>日本の課題とAIの力</h3>
+                    <p>日本では少子高齢化が急速に進み、労働人口が減少し続けています。企業は限られた人員で成果を生み出さなければならず、ひとりひとりの生産性向上が必要不可欠です。これまでは業務効率化のためのサービスが提供されてきましたが、とっつきにくさや「今のままで十分」という考えから、十分に活用されていない現状があります。</p>
+                    
+                    <p>しかし、これから若者や働き手が少なくなる中で、子どもたちの未来のためにも今から行動し、生産性を高めていく必要があります。<strong>AIはその解決策となる重要な存在</strong>です。AIを活用することで業務時間の削減だけでなく、今までできなかったことが可能になり、仕事がより楽しくなります。</p>
+                    
+                    <p>AIは仕事を奪うものではなく、<strong>師匠</strong>であり<strong>相棒</strong>です。AIに何でも教えてもらうことで、どんどん新しいことができるようになります。「めっちゃええやん！便利やん！」と思ってもらえる人を増やし、AIリテラシーを高めていくことが、この活動の目的です。</p>
+                </div>
+                <div class="project-image">
+                    <img src="AI_eeyan_logo.png" alt="AIええやんプロジェクトロゴ" class="project-icon" loading="lazy">
+                </div>
+            </div>
+            
+            <div class="project-goals">
+                <h3>プロジェクトの目標</h3>
+                <ul class="goals-list">
+                    <li>
+                        <span class="goal-icon">🚀</span>
+                        <div class="goal-content">
+                            <h4>AI普及活動の推進</h4>
+                            <p>大阪を中心に、AI技術の啓発イベントやワークショップを定期的に開催し、AIの可能性を体験してもらいます。AIがいかに身近で有用なものであるかを伝え、誰もが使いこなせるよう支援します。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="goal-icon">🏢</span>
+                        <div class="goal-content">
+                            <h4>企業のAI活用支援</h4>
+                            <p>中小企業を中心に、実践的なAI導入コンサルティングを提供し、生産性向上をサポートします。それぞれの企業に合ったAI活用方法を共に考え、実装までを支援します。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="goal-icon">🤝</span>
+                        <div class="goal-content">
+                            <h4>地域・企業・教育現場での生産性向上を促進する</h4>
+                            <p>少子高齢化・人手不足に対して、AI活用で一人ひとりの能力を最大限発揮できる社会をつくる。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="goal-icon">👨‍👩‍👧‍👦</span>
+                        <div class="goal-content">
+                            <h4>子どもたちの未来のための活動</h4>
+                            <p>次世代を担う子どもたちがAIと共に成長できる環境づくりを推進します。ひとりひとりの心がけが子どもたちの未来を救うという信念のもと、教育プログラムの開発と実施に取り組みます。</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <h2>AIギャラリー</h2>
+            <div class="ai-gallery">
+                <div class="gallery-item">
+                    <img src="https://source.unsplash.com/random/400x400/?artificial-intelligence" alt="AI技術のイメージ写真" loading="lazy">
+                    <div class="gallery-caption">先端AI技術</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://source.unsplash.com/random/400x400/?osaka,japan" alt="大阪の街並みの写真" loading="lazy">
+                    <div class="gallery-caption">大阪の活気</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://source.unsplash.com/random/400x400/?workshop,technology" alt="AIワークショップの様子" loading="lazy">
+                    <div class="gallery-caption">AIワークショップ</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://source.unsplash.com/random/400x400/?team,innovation" alt="チームでの議論の様子" loading="lazy">
+                    <div class="gallery-caption">未来を創る仲間たち</div>
+                </div>
+            </div>
+
+            <div class="ai-counter">
+                <div class="counter-item">
+                    <div class="counter-value">50+</div>
+                    <div class="counter-title">開催イベント数</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-value">1,000+</div>
+                    <div class="counter-title">参加者数</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-value">30+</div>
+                    <div class="counter-title">提携企業数</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-value">95%</div>
+                    <div class="counter-title">満足度</div>
+                </div>
+            </div>
+
+            <div class="experience-section">
+                <h3>AI活用事例</h3>
+                <div class="services-container">
+                    <div class="experience-card">
+                        <i class="fas fa-store experience-icon"></i>
+                        <h3>小売業でのAI活用</h3>
+                        <p>地元の商店街の小売店がAIを導入し、在庫管理と顧客行動分析を効率化。売上が25%向上し、廃棄ロスが60%削減されました。「めっちゃ便利になって商売が楽しくなった」と店主は語ります。</p>
+                    </div>
+                    <div class="experience-card">
+                        <i class="fas fa-chalkboard-teacher experience-icon"></i>
+                        <h3>教育現場でのAI活用</h3>
+                        <p>大阪府内の学校でAI教材を導入し、一人ひとりの学習ペースに合わせた指導を実現。生徒の理解度が向上し、教員の負担も軽減されました。「AIがあることで、もっと子どもたちに寄り添える時間が増えた」と先生方から好評です。</p>
+                    </div>
+                    <div class="experience-card">
+                        <i class="fas fa-utensils experience-icon"></i>
+                        <h3>飲食店でのAI活用</h3>
+                        <p>老舗のたこ焼き店がAIによる需要予測と自動発注システムを導入。材料の廃棄ロスが減少し、繁忙期の人手不足も解消されました。「AIのおかげで本業のたこ焼き作りに集中できるようになった」と笑顔で話す店主の姿が印象的です。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="declaration">
+            <h2>AIええやん宣言</h2>
+            <div class="declaration-content">
+                <div class="declaration-logo">
+                    <img src="AI_eeyan_logo.png" alt="AIええやん宣言ロゴ" class="declaration-logo-img" loading="lazy">
+                </div>
+                <div class="declaration-text">
+                    <p class="declaration-message">私たちはAIを通じて、人々の可能性を広げ、より豊かな未来を創ることを宣言します。</p>
+                    <p>少子高齢化が進む日本において、限られた人員で成果を生み出すためには、ひとりひとりの生産性向上が必要不可欠です。AIはその解決策となる重要な存在です。</p>
+                    <p>現状維持ではなく、新しい技術を受け入れ、子どもたちの未来のためにも今から行動することが大切だと考えています。AIで何ができるのか、自社でどのように活用できるのかを学び、実践することが未来への第一歩です。</p>
+                    <p>AIは私たちの可能性を広げるパートナーであり、仕事を奪うものではありません。AIは<strong>師匠</strong>であり<strong>相棒</strong>です。AIに教えてもらうことで、どんどん新しいことができるようになります。</p>
+                    <p>大阪の「やってみよか」精神で、AIの力を活かし、<strong>「AIええやん！便利やん！」</strong>を大阪から日本中に、そして世界に広げていきましょう！ひとりひとりの心がけが子どもたちの未来を救うことになるのです。</p>
+                </div>
+                <div class="declaration-action">
+                    <a href="#" class="declaration-btn">AIええやん宣言に賛同する</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>お問い合わせやで～</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">お名前：</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">メールアドレス：</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="inquiry-type">お問い合わせ内容：</label>
+                    <select id="inquiry-type" name="inquiry-type" required>
+                        <option value="" disabled selected>選択してください</option>
+                        <option value="join">入会について</option>
+                        <option value="event">イベントについて</option>
+                        <option value="collaboration">企業連携について</option>
+                        <option value="lecture">講演依頼</option>
+                        <option value="other">その他</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">メッセージ：</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">送信</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="AI_eeyan_logo.png" alt="AIええやん協会ロゴ" class="footer-logo-img" loading="lazy">
+            </div>
+        </div>
+        <div class="footer-links">
+            <ul>
+                <li><a href="#">当協会について</a></li>
+                <li><a href="#">会員規則</a></li>
+                <li><a href="#">個人情報保護方針</a></li>
+                <li><a href="#">サイトマップ</a></li>
+            </ul>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2025 AIええやん協会. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script defer>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('nav');
+            const overlay = document.querySelector('.overlay');
+            const navLinks = document.querySelectorAll('nav ul li a');
+            
+            // メニュー開閉機能
+            menuToggle.addEventListener('click', function() {
+                nav.classList.toggle('show');
+                overlay.classList.toggle('show');
+                document.body.classList.toggle('no-scroll');
+            });
+            
+            // オーバーレイクリックでメニューを閉じる
+            overlay.addEventListener('click', function() {
+                nav.classList.remove('show');
+                overlay.classList.remove('show');
+                document.body.classList.remove('no-scroll');
+            });
+            
+            // ナビゲーションリンククリックでメニューを閉じる
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    nav.classList.remove('show');
+                    overlay.classList.remove('show');
+                    document.body.classList.remove('no-scroll');
+                });
+            });
+            
+            // リサイズ時に表示を調整
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    nav.classList.remove('show');
+                    overlay.classList.remove('show');
+                    document.body.classList.remove('no-scroll');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
