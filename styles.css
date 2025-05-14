@@ -56,11 +56,11 @@ header {
 }
 
 .site-title {
-    color: #FF5722; /* オレンジ色 */
+    color: pink; /* ピンク色に変更 */
     text-decoration: none;
     transition: color 0.3s ease;
     font-weight: bold;
-    font-size: 1.4em; /* 2サイズ大きく */
+    font-size: 1em; /* 2サイズ小さく */
 }
 
 .site-title:hover {
